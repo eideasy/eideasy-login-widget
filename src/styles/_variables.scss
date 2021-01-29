@@ -1,2 +1,28 @@
 $bg-color: green;
 $theme-color: purple;
+
+$gray-100: #FDFCFC;
+$gray-300: #E7E7E7;
+$gray-400: #F7F7F7;
+$gray-500: #D9D9D9;
+$gray-600: #9CA6B1;
+$gray-700: #3A3A3A;
+
+$brand-primary-400: #003168;
+
+$theme-color-primary-400: $brand-primary-400;
+
+$font-family: Arial, sans-serif;
+$font-size-base: 16px;
+
+$font-weight-normal: 400;
+
+$border-color: $gray-500;
+$border-radius: 6px;
+
+$spacer: 4px;
+$spacer-2: 2 * $spacer;
+$spacer-3: 3 * $spacer;
+$spacer-4: 4 * $spacer;
+$spacer-5: 5 * $spacer;
+
