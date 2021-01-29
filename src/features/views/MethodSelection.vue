@@ -61,6 +61,8 @@ export default {
       mutations.loadingEnd();
       if (authResult) {
         _self.successCallback(authResult);
+      } else {
+        console.log('fail');
       }
     }
   }
