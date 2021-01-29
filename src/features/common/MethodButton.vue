@@ -37,6 +37,12 @@ export default {
   outline: none;
   text-align: center;
 
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+
   svg {
     display: block;
     width: 100%;
@@ -52,6 +58,12 @@ export default {
   border-radius: 3.625em;
   border: $border-default;
   padding: $spacer-2;
+  transition: $transition-duration;
+}
+
+.MethodButton:hover .Ring,
+.MethodButton:focus .Ring {
+  border-color: currentColor;
 }
 
 .Text {

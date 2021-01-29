@@ -15,6 +15,7 @@ $theme-color-primary-400: $brand-primary-400;
 $font-family: Arial, sans-serif;
 $font-size-base: 16px;
 $font-size-sm: 12px;
+$font-size-xs: 10px;
 
 $font-weight-normal: 400;
 
@@ -29,4 +30,12 @@ $spacer-2: 2 * $spacer;
 $spacer-3: 3 * $spacer;
 $spacer-4: 4 * $spacer;
 $spacer-5: 5 * $spacer;
+$spacer-6: 6 * $spacer;
+$spacer-7: 7 * $spacer;
+$spacer-8: 8 * $spacer;
+$spacer-9: 9 * $spacer;
+$spacer-10: 10 * $spacer;
 
+$widget-spacing-x: $spacer-10;
+
+$transition-duration: .2s;

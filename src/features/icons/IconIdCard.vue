@@ -7,10 +7,5 @@
       <path d="M31.3853 15.6826H23.4985V16.7639H31.3853V15.6826Z" fill="#003168"/>
       <path d="M31.3853 18.5332H23.4985V19.6145H31.3853V18.5332Z" fill="#003168"/>
     </g>
-    <defs>
-      <clipPath id="clip0">
-        <rect width="30.9437" height="19.9375" fill="white" transform="translate(5 11)"/>
-      </clipPath>
-    </defs>
   </g>
 </template>

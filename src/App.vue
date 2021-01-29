@@ -4,19 +4,11 @@
 
     lang: {{ lang }}
     {{ translations }}
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-
-    <IconBase>
-      <IconTest/>
-    </IconBase>
   </div>
 </template>
 
 <script>
 import Layout from "./features/common/Layout";
-import HelloWorld from './features/HelloWorld.vue';
-import IconBase from './features/icons/IconBase.vue';
-import IconTest from './features/icons/IconTest.vue';
 
 /*import IDCardAuth from '@eid-easy/eideasy-js-sdk';
 
@@ -34,9 +26,6 @@ IDCardAuthInstance.start();*/
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    IconBase,
-    IconTest,
     Layout,
   },
   props: {

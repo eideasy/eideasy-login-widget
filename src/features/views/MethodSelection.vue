@@ -2,10 +2,10 @@
   <div class="MethodSelection">
     <div class="Row">
       <div class="Unit">
-        <MethodButton iconName="IconIdCard">ID-CARD</MethodButton>
+        <MethodButton iconName="IconMobileId">MOBILE-ID</MethodButton>
       </div>
       <div class="Unit">
-        <MethodButton iconName="IconIdCard">ID-CARD</MethodButton>
+        <MethodButton iconName="IconSmartId">SMART-ID</MethodButton>
       </div>
       <div class="Unit">
         <MethodButton iconName="IconIdCard">ID-CARD</MethodButton>
