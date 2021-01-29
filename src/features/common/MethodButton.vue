@@ -2,6 +2,7 @@
   <a
       href="#"
       class="MethodButton"
+      @click="$emit('click')"
   >
     <div class="Ring">
       <Icon :iconName="iconName"/>
@@ -23,6 +24,7 @@ export default {
   },
   props: {
     iconName: String,
+    clickHandler: Function,
   }
 }
 </script>

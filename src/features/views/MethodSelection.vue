@@ -1,11 +1,17 @@
 <template>
   <div class="MethodSelection">
+    <Spinner></Spinner>
     <div class="Row">
       <div class="Unit">
         <MethodButton iconName="IconMobileId">MOBILE-ID</MethodButton>
       </div>
       <div class="Unit">
-        <MethodButton iconName="IconSmartId">SMART-ID</MethodButton>
+        <MethodButton
+            iconName="IconSmartId"
+            @click="clickHandler"
+        >
+          SMART-ID
+        </MethodButton>
       </div>
       <div class="Unit">
         <MethodButton iconName="IconIdCard">ID-CARD</MethodButton>
@@ -16,11 +22,18 @@
 
 <script>
 import MethodButton from '../common/MethodButton.vue';
+import Spinner from '../common/Spinner';
 
 export default {
   name: 'MethodSelection',
   components: {
     MethodButton,
+    Spinner,
+  },
+  methods: {
+    clickHandler() {
+      console.log('test');
+    }
   }
 }
 </script>
