@@ -2,7 +2,7 @@
   <a
       href="#"
       class="MethodButton"
-      @click="$emit('click')"
+      @click.prevent="$emit('click')"
   >
     <div class="Ring">
       <Icon :iconName="iconName"/>

@@ -14,7 +14,7 @@
       <div class="Unit">
         <MethodButton
             iconName="IconIdCard"
-            @click="clickHandler"
+            @click="clickHandler()"
         >
           ID-CARD
         </MethodButton>
