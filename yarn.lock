@@ -846,10 +846,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@eid-easy/eideasy-js-sdk@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@eid-easy/eideasy-js-sdk/-/eideasy-js-sdk-0.2.0.tgz#e16d91057577f110f21508df037ba63d4cc00b1f"
-  integrity sha512-7KGgCMqkY/aF8eK/zHElqHNJo/LRA/9qrqxdjQNuE18x/RWk1D2rrdJILajX3rZwwgGMbB0qzxthSvjys2kOwA==
+"@eid-easy/eideasy-js-sdk@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@eid-easy/eideasy-js-sdk/-/eideasy-js-sdk-0.3.0.tgz#8336e02a1a3942014a05e48067b2a007e46d2cc1"
+  integrity sha512-LNT36rPPvYiwuEUPsqUCUtCIIefFVycRsOWXKIFtoPBHdYl+Xj3epL65AddbvTeKvP93igaCu2cikzQVE7KSqA==
   dependencies:
     whatwg-fetch "^3.5.0"
 

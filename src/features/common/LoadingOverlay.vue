@@ -25,7 +25,7 @@ export default {
     left: 0;
     top: 0;
     background-color: $white;
-    opacity: 0.7;
+    opacity: 0.9;
   }
 
   .SpinnerHolder {

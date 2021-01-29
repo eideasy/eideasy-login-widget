@@ -10,19 +10,6 @@
 <script>
 import Layout from "./features/common/Layout";
 
-/*import IDCardAuth from '@eid-easy/eideasy-js-sdk';
-
-const IDCardAuthInstance = new IDCardAuth({
-  sandbox: true,
-  cardCountryCode: 'EE',
-  clientId: '2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg',
-  onAuthorize: async (data) => {
-    console.log(data);
-  },
-});
-
-IDCardAuthInstance.start();*/
-
 export default {
   name: 'App',
   components: {

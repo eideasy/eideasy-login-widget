@@ -2,7 +2,7 @@
   <div class="Layout">
     <Header></Header>
     <div class="Main">
-      <LoadingOverlay></LoadingOverlay>
+      <LoadingOverlay v-if="isLoading"></LoadingOverlay>
       <component :is="currentView"></component>
     </div>
     <Footer>
@@ -29,6 +29,9 @@ export default {
   data: () => ({
     currentView: store.currentView,
   }),
+  computed: {
+    isLoading: () => store.isLoading,
+  },
   methods: {
     setCurrentView: mutations.setCurrentView
   }
