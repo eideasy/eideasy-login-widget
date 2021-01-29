@@ -28,14 +28,27 @@
 
 
 <div class="container">
-    <div class="widgetHolder">
-        <eideasy-widget
-                lang="ee"
-                country="ee"
-        >
-        </eideasy-widget>
-    </div>
+    <div id="widgetHolder" class="widgetHolder"></div>
 </div>
+
+<script>
+    var widgetHolder = document.getElementById('widgetHolder');
+    var eidEasyWidget = document.createElement('eideasy-widget');
+
+    eidEasyWidget.langCode = 'ee'; // ISO 639-1 two letter language code
+    eidEasyWidget.countryCode = 'EE'; // ISO 3166  two letter country code
+    eidEasyWidget.localApiEndpoint = 'http://demo.eideasy.local/api/identity/finish';
+    eidEasyWidget.clientId = '2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg';
+    eidEasyWidget.sandbox = true;
+    eidEasyWidget.onSuccess = function(data) {
+      console.log('success');
+      console.log(data);
+    };
+    eidEasyWidget.translations = {}; // translations object to override existing translations or provide completely new translations
+
+
+    widgetHolder.appendChild(eidEasyWidget);
+</script>
 <!-- built files will be auto injected -->
 </body>
 </html>
