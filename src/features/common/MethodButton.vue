@@ -3,7 +3,13 @@
       href="#"
       class="MethodButton"
   >
-    <Icon :iconName="iconName"/>
+    <div class="Ring">
+      <Icon :iconName="iconName"/>
+    </div>
+
+    <div class="Text">
+      <slot></slot>
+    </div>
   </a>
 </template>
 
@@ -27,11 +33,9 @@ export default {
   display: inline-block;
   vertical-align: top;
   color: $theme-color-primary-400;
-  width: 3.625em;
-  height: 3.625em;
-  border-radius: 3.625em;
-  border: $border-default;
-  padding: $spacer-2;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
 
   svg {
     display: block;
@@ -39,4 +43,21 @@ export default {
     height: 100%;
   }
 }
+
+.Ring {
+  display: inline-block;
+  vertical-align: top;
+  width: 3.625em;
+  height: 3.625em;
+  border-radius: 3.625em;
+  border: $border-default;
+  padding: $spacer-2;
+}
+
+.Text {
+  font-size: $font-size-sm;
+  line-height: 1.33333;
+  margin-top: $spacer-2;
+}
+
 </style>

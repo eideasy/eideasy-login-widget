@@ -50,6 +50,7 @@ export default {
 .App {
   font-family: $font-family;
   font-size: $font-size-base;
+  font-weight: $font-weight-normal;
 }
 
 .App * {
