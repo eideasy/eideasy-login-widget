@@ -1,6 +1,6 @@
 <template>
   <div class="MethodSelection">
-    <Spinner></Spinner>
+    <LoadingOverlay></LoadingOverlay>
     <div class="Row">
       <div class="Unit">
         <MethodButton iconName="IconMobileId">MOBILE-ID</MethodButton>
@@ -22,13 +22,13 @@
 
 <script>
 import MethodButton from '../common/MethodButton.vue';
-import Spinner from '../common/Spinner';
+import LoadingOverlay from '../common/LoadingOverlay';
 
 export default {
   name: 'MethodSelection',
   components: {
     MethodButton,
-    Spinner,
+    LoadingOverlay,
   },
   methods: {
     clickHandler() {

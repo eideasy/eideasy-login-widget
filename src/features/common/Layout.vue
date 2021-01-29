@@ -2,6 +2,7 @@
   <div class="Layout">
     <Header></Header>
     <div class="Main">
+      <LoadingOverlay></LoadingOverlay>
       <component :is="currentView"></component>
     </div>
     <Footer>
@@ -15,6 +16,7 @@ import {store, mutations} from '../../store';
 import MethodSelection from '../views/MethodSelection.vue';
 import Footer from './Footer';
 import Header from './Header';
+import LoadingOverlay from '../common/LoadingOverlay';
 
 export default {
   name: 'Layout',
@@ -22,6 +24,7 @@ export default {
     MethodSelection,
     Footer,
     Header,
+    LoadingOverlay,
   },
   data: () => ({
     currentView: store.currentView,
@@ -41,6 +44,7 @@ export default {
   }
 
   .Main {
+    position: relative;
     padding: $spacer-6 $spacer-10;
   }
 </style>
