@@ -19,6 +19,9 @@ $font-weight-normal: 400;
 
 $border-color: $gray-500;
 $border-radius: 6px;
+$border-width: 1px;
+
+$border-default: $border-width solid $border-color;
 
 $spacer: 4px;
 $spacer-2: 2 * $spacer;
