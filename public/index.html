@@ -36,7 +36,7 @@
     const eidEasyWidget = document.createElement('eideasy-widget');
 
     var settings = {
-      langCode: 'ee', // ISO 639-1 two letter language code
+      langCode: 'et', // ISO 639-1 two letter language code
       countryCode: 'EE', // ISO 3166  two letter country code
       localApiEndpoint: 'http://demo.eideasy.local/api/identity/finish',
       clientId: '2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg',
@@ -45,7 +45,14 @@
         console.log('success');
         console.log(data);
       },
-      translations: {}, // translations object to override existing translations or provide completely new translations
+      translations: {
+        'et': {
+          "message": "Mina olen antud kasutaja poolt i18n !!",
+        },
+        'en': {
+          message: "I am provided in settings",
+        }
+      }, // translations object to override existing translations or provide completely new translations
     }
 
     Object.keys(settings).forEach(key => {

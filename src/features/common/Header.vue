@@ -1,5 +1,6 @@
 <template>
   <div class="Header">
+    I am header {{$t("message")}}
     <slot></slot>
   </div>
 </template>

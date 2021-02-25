@@ -1,5 +1,6 @@
 <template>
   <div class="App">
+    {{ langCode }}
     <Layout/>
   </div>
 </template>
@@ -22,15 +23,31 @@ export default {
     translations: Object,
     onSuccess: Function,
   },
-  created: function() {
-    mutations.setLang(this.langCode);
+  created: function () {
+    const {translations, $i18n} = this;
     mutations.setCountryCode(this.countryCode);
     mutations.setLocalApiEndpoint(this.localApiEndpoint);
     mutations.setClientId(this.clientId);
     mutations.setSandbox(this.sandbox);
-    mutations.setTranslations(this.translations);
     mutations.setSuccessCallback(this.onSuccess);
-  }
+
+    if (translations) {
+      Object.keys(translations)
+          .forEach((locale) => {
+            const currentMessages = $i18n.messages[locale] || {};
+            $i18n.setLocaleMessage(locale, {...currentMessages, ...translations[locale]});
+          });
+    }
+  },
+
+  watch: {
+    langCode: {
+      handler(newVal) {
+        this.$i18n.locale = newVal;
+      },
+      immediate: true,
+    },
+  },
 }
 </script>
 
