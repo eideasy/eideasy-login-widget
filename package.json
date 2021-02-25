@@ -1,10 +1,11 @@
 {
-  "name": "eideasy-widget",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@eid-easy/eideasy-widget",
+  "version": "0.7.0",
+  "main": "dist/full/eideasy-widget.umd.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --dest dist/full --target lib --inline-vue --name eideasy-widget src/main.js",
+    "build:external-vue": "vue-cli-service build --dest dist/widget-only --target lib --name eideasy-widget src/main.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

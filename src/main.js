@@ -6,3 +6,4 @@ Vue.use(vueCustomElement);
 Vue.config.productionTip = false
 
 Vue.customElement('eideasy-widget', App);
+

@@ -1,5 +1,8 @@
 # eideasy-widget
 
+# Important !!
+This package is in active development and not production ready.
+
 ## Project setup
 ```
 yarn install
@@ -15,15 +18,19 @@ yarn serve
 yarn build
 ```
 
+### Compiles and minifies for production, does not include Vue in the bundle
+```
+yarn build:external-vue
+```
+
 ### Lints and fixes files
 ```
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/)
-
 ### Development notes
+export as a library: https://cli.vuejs.org/guide/build-targets.html#app
+https://github.com/vuejs/vue-web-component-wrapper
 https://github.com/karol-f/vue-custom-element#example
 https://karol-f.github.io/vue-custom-element/#/demos/binding
 https://itnext.io/vuidget-how-to-create-an-embeddable-vue-js-widget-with-vue-custom-element-674bdcb96b97

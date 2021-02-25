@@ -6,12 +6,19 @@ module.exports = {
     config.optimization.delete('splitChunks')
   },
   css: {
+    extract: false,
     loaderOptions: {
       sass: {
         additionalData: `@import "@/styles/_variables.scss";`
       }
     }
   },
+  pages: {
+    'eideasy-widget': {
+      entry: 'src/main.js',
+      filename: 'index.html'
+    }
+  }
   /*
   configureWebpack: {
     plugins: [new BundleAnalyzerPlugin()]
