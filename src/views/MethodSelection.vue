@@ -1,6 +1,6 @@
 <script>
-import MethodButton from '../common/MethodButton.vue';
-import {store, mutations} from '../../store';
+import MethodButton from '../components/MethodButton.vue';
+import {store, mutations} from '../store';
 import IDCardAuth from '@eid-easy/eideasy-js-sdk';
 
 export default {

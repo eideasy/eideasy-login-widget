@@ -1,9 +1,9 @@
 <script>
-import {store, mutations} from '../../store';
+import {store, mutations} from '../store';
 import MethodSelection from '../views/MethodSelection.vue';
 import AppFooter from './AppFooter';
 import AppHeader from './AppHeader';
-import LoadingOverlay from '../common/LoadingOverlay';
+import LoadingOverlay from './LoadingOverlay';
 
 export default {
   name: 'AppLayout',

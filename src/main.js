@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import vueCustomElement from 'vue-custom-element'
-import i18n from './features/i18n/i18n';
+import i18n from './i18n/i18n';
 
 Vue.use(vueCustomElement);
 

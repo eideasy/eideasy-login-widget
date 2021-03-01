@@ -1,5 +1,5 @@
 <script>
-import AppLayout from "./features/common/AppLayout";
+import AppLayout from "./components/AppLayout";
 import {mutations} from './store';
 
 export default {
