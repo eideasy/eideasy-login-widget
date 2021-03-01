@@ -1,5 +1,5 @@
 <template>
-  <div class="App">
+  <div :class="$style.app">
     {{ langCode }}
     <Layout/>
   </div>
@@ -51,14 +51,14 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.App {
+<style lang="scss" module>
+.app {
   font-family: $font-family;
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
 }
 
-.App * {
+.app * {
   box-sizing: border-box;
 }
 </style>

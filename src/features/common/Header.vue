@@ -1,5 +1,5 @@
 <template>
-  <div class="Header">
+  <div :class="$style.header">
     I am header {{$t("message")}}
     <slot></slot>
   </div>
@@ -11,8 +11,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.Header {
+<style lang="scss" module>
+.header {
   border-bottom: $border-default;
   min-height: 71px;
   padding: $spacer-1 $spacer-4;

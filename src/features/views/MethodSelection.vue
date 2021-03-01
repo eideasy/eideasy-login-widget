@@ -1,17 +1,17 @@
 <template>
-  <div class="MethodSelection">
-    <div class="Row">
-      <div class="Unit">
+  <div :class="$style.methodSelection">
+    <div :class="$style.row">
+      <div :class="$style.unit">
         <MethodButton iconName="IconMobileId">MOBILE-ID</MethodButton>
       </div>
-      <div class="Unit">
+      <div :class="$style.unit">
         <MethodButton
             iconName="IconSmartId"
         >
           SMART-ID
         </MethodButton>
       </div>
-      <div class="Unit">
+      <div :class="$style.unit">
         <MethodButton
             iconName="IconIdCard"
             @click="clickHandler()"
@@ -69,15 +69,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.Row {
+<style lang="scss" module>
+.row {
   display: flex;
   justify-content: center;
   margin-left: -$spacer-2;
   margin-right: -$spacer-2;
 }
 
-.Unit {
+.unit {
   padding: 0 $spacer-2;
 }
 </style>

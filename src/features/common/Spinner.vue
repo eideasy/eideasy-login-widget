@@ -1,9 +1,9 @@
 <template>
-  <div class="Spinner"></div>
+  <div :class="$style.spinner"></div>
 </template>
 
-<style lang="scss" scoped>
-.Spinner {
+<style lang="scss" module>
+.spinner {
   font-size: 16px;
   width: 4.375em;
   height: 4.375em;

@@ -1,14 +1,14 @@
 <template>
   <a
       href="#"
-      class="MethodButton"
+      :class="$style.methodButton"
       @click.prevent="$emit('click')"
   >
-    <div class="Ring">
+    <div :class="$style.ring">
       <Icon :iconName="iconName"/>
     </div>
 
-    <div class="Text">
+    <div :class="$style.text">
       <slot></slot>
     </div>
   </a>
@@ -29,8 +29,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.MethodButton {
+
+<style lang="scss" module>
+.methodButton {
   font-size: 16px;
   display: inline-block;
   vertical-align: top;
@@ -52,7 +53,7 @@ export default {
   }
 }
 
-.Ring {
+.ring {
   display: inline-block;
   vertical-align: top;
   width: 3.625em;
@@ -63,15 +64,14 @@ export default {
   transition: $transition-duration;
 }
 
-.MethodButton:hover .Ring,
-.MethodButton:focus .Ring {
+.methodButton:hover .ring,
+.methodButton:focus .ring {
   border-color: currentColor;
 }
 
-.Text {
+.text {
   font-size: $font-size-sm;
   line-height: 1.33333;
   margin-top: $spacer-2;
 }
-
 </style>

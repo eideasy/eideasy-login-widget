@@ -1,7 +1,7 @@
 <template>
-  <div class="Layout">
+  <div :class="$style.layout">
     <Header></Header>
-    <div class="Main">
+    <div :class="$style.main">
       <LoadingOverlay v-if="isLoading"></LoadingOverlay>
       <component :is="currentView"></component>
     </div>
@@ -38,15 +38,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .Layout {
+<style lang="scss" module>
+  .layout {
     background-color: $gray-100;
     border-radius: $border-radius;
     border: 1px solid $border-color;
     overflow: hidden;
   }
 
-  .Main {
+  .main {
     position: relative;
     padding: $spacer-6 $spacer-10;
   }

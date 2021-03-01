@@ -1,6 +1,6 @@
 <template>
-  <div class="LoadingOverlay">
-    <div class="SpinnerHolder">
+  <div :class="$style.loadingOverlay">
+    <div :class="$style.spinnerHolder">
       <Spinner></Spinner>
     </div>
   </div>
@@ -17,8 +17,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .LoadingOverlay {
+<style lang="scss" module>
+  .loadingOverlay {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -28,7 +28,7 @@ export default {
     opacity: 0.9;
   }
 
-  .SpinnerHolder {
+  .spinnerHolder {
     position: absolute;
     left: 50%;
     top: 50%;
