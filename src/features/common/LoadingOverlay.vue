@@ -1,18 +1,18 @@
 <template>
   <div :class="$style.loadingOverlay">
     <div :class="$style.spinnerHolder">
-      <Spinner></Spinner>
+      <AppSpinner/>
     </div>
   </div>
 </template>
 
 <script>
-import Spinner from './Spinner.vue';
+import AppSpinner from './AppSpinner.vue';
 
 export default {
   name: 'LoadingOverlay',
   components: {
-    Spinner
+    AppSpinner
   },
 }
 </script>

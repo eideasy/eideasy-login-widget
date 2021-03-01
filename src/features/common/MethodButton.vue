@@ -5,7 +5,7 @@
       @click.prevent="$emit('click')"
   >
     <div :class="$style.ring">
-      <Icon :iconName="iconName"/>
+      <AppIcon :iconName="iconName"/>
     </div>
 
     <div :class="$style.text">
@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import Icon from '../icons/Icon.vue';
+import AppIcon from '../icons/AppIcon.vue';
 
 export default {
   name: 'MethodButton',
   components: {
-    Icon
+    AppIcon
   },
   props: {
     iconName: String,

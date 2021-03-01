@@ -1,18 +1,18 @@
 <template>
   <div :class="$style.app">
     {{ langCode }}
-    <Layout/>
+    <AppLayout/>
   </div>
 </template>
 
 <script>
-import Layout from "./features/common/Layout";
+import AppLayout from "./features/common/AppLayout";
 import {mutations} from './store';
 
 export default {
   name: 'App',
   components: {
-    Layout,
+    AppLayout,
   },
   props: {
     langCode: String,

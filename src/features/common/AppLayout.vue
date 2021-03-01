@@ -1,29 +1,29 @@
 <template>
   <div :class="$style.layout">
-    <Header></Header>
+    <AppHeader></AppHeader>
     <div :class="$style.main">
       <LoadingOverlay v-if="isLoading"></LoadingOverlay>
       <component :is="currentView"></component>
     </div>
-    <Footer>
+    <AppFooter>
       Powered by eIDEasy
-    </Footer>
+    </AppFooter>
   </div>
 </template>
 
 <script>
 import {store, mutations} from '../../store';
 import MethodSelection from '../views/MethodSelection.vue';
-import Footer from './Footer';
-import Header from './Header';
+import AppFooter from './AppFooter';
+import AppHeader from './AppHeader';
 import LoadingOverlay from '../common/LoadingOverlay';
 
 export default {
-  name: 'Layout',
+  name: 'AppLayout',
   components: {
     MethodSelection,
-    Footer,
-    Header,
+    AppFooter,
+    AppHeader,
     LoadingOverlay,
   },
   data: () => ({

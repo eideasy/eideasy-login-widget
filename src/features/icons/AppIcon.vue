@@ -11,7 +11,7 @@ import IconIdCard from './IconIdCard.vue';
 import IconMobileId from './IconMobileId.vue';
 
 export default {
-  name: 'Icon',
+  name: 'AppIcon',
   components: {
     IconBase,
     IconSmartId,
