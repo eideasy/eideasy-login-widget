@@ -1,10 +1,3 @@
-<template>
-  <div :class="$style.app">
-    {{ langCode }}
-    <AppLayout/>
-  </div>
-</template>
-
 <script>
 import AppLayout from "./features/common/AppLayout";
 import {mutations} from './store';
@@ -50,6 +43,13 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div :class="$style.app">
+    {{ langCode }}
+    <AppLayout/>
+  </div>
+</template>
 
 <style lang="scss" module>
 .app {

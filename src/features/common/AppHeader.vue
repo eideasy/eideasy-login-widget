@@ -1,15 +1,15 @@
+<script>
+export default {
+  name: 'AppHeader',
+}
+</script>
+
 <template>
   <div :class="$style.header">
     I am header {{$t("message")}}
     <slot></slot>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'AppHeader',
-}
-</script>
 
 <style lang="scss" module>
 .header {

@@ -1,19 +1,3 @@
-<template>
-  <a
-      href="#"
-      :class="$style.methodButton"
-      @click.prevent="$emit('click')"
-  >
-    <div :class="$style.ring">
-      <AppIcon :iconName="iconName"/>
-    </div>
-
-    <div :class="$style.text">
-      <slot></slot>
-    </div>
-  </a>
-</template>
-
 <script>
 import AppIcon from '../icons/AppIcon.vue';
 
@@ -29,6 +13,21 @@ export default {
 }
 </script>
 
+<template>
+  <a
+      href="#"
+      :class="$style.methodButton"
+      @click.prevent="$emit('click')"
+  >
+    <div :class="$style.ring">
+      <AppIcon :iconName="iconName"/>
+    </div>
+
+    <div :class="$style.text">
+      <slot></slot>
+    </div>
+  </a>
+</template>
 
 <style lang="scss" module>
 .methodButton {

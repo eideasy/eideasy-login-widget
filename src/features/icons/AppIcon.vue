@@ -1,9 +1,3 @@
-<template>
-  <IconBase>
-    <component :is="iconName"></component>
-  </IconBase>
-</template>
-
 <script>
 import IconBase from './IconBase.vue';
 import IconSmartId from './IconSmartId.vue';
@@ -23,3 +17,10 @@ export default {
   }
 }
 </script>
+
+<template>
+  <IconBase>
+    <component :is="iconName"></component>
+  </IconBase>
+</template>
+

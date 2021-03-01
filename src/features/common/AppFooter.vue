@@ -1,3 +1,9 @@
+<script>
+export default {
+  name: 'AppFooter',
+}
+</script>
+
 <template>
   <div :class="$style.footer">
     <div :class="$style.text">
@@ -5,12 +11,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'AppFooter',
-}
-</script>
 
 <style lang="scss" module>
 .footer {

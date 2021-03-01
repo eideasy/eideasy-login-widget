@@ -1,28 +1,3 @@
-<template>
-  <div :class="$style.methodSelection">
-    <div :class="$style.row">
-      <div :class="$style.unit">
-        <MethodButton iconName="IconMobileId">MOBILE-ID</MethodButton>
-      </div>
-      <div :class="$style.unit">
-        <MethodButton
-            iconName="IconSmartId"
-        >
-          SMART-ID
-        </MethodButton>
-      </div>
-      <div :class="$style.unit">
-        <MethodButton
-            iconName="IconIdCard"
-            @click="clickHandler()"
-        >
-          ID-CARD
-        </MethodButton>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import MethodButton from '../common/MethodButton.vue';
 import {store, mutations} from '../../store';
@@ -68,6 +43,31 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div :class="$style.methodSelection">
+    <div :class="$style.row">
+      <div :class="$style.unit">
+        <MethodButton iconName="IconMobileId">MOBILE-ID</MethodButton>
+      </div>
+      <div :class="$style.unit">
+        <MethodButton
+            iconName="IconSmartId"
+        >
+          SMART-ID
+        </MethodButton>
+      </div>
+      <div :class="$style.unit">
+        <MethodButton
+            iconName="IconIdCard"
+            @click="clickHandler()"
+        >
+          ID-CARD
+        </MethodButton>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" module>
 .row {

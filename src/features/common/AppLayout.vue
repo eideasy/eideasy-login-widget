@@ -1,16 +1,3 @@
-<template>
-  <div :class="$style.layout">
-    <AppHeader></AppHeader>
-    <div :class="$style.main">
-      <LoadingOverlay v-if="isLoading"></LoadingOverlay>
-      <component :is="currentView"></component>
-    </div>
-    <AppFooter>
-      Powered by eIDEasy
-    </AppFooter>
-  </div>
-</template>
-
 <script>
 import {store, mutations} from '../../store';
 import MethodSelection from '../views/MethodSelection.vue';
@@ -37,6 +24,19 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div :class="$style.layout">
+    <AppHeader></AppHeader>
+    <div :class="$style.main">
+      <LoadingOverlay v-if="isLoading"></LoadingOverlay>
+      <component :is="currentView"></component>
+    </div>
+    <AppFooter>
+      Powered by eIDEasy
+    </AppFooter>
+  </div>
+</template>
 
 <style lang="scss" module>
   .layout {
