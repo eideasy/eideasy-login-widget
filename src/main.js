@@ -16,4 +16,3 @@ Vue.customElement('eideasy-widget', App, {
     console.info('attributeChangedCallback', name, oldValue, value);
   },
 });
-

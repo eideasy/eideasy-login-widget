@@ -8,7 +8,7 @@ export default {
   },
   props: {
     iconName: String,
-    clickHandler: Function,
+    onClick: Function,
   }
 }
 </script>
@@ -17,7 +17,7 @@ export default {
   <a
       href="#"
       :class="$style.methodButton"
-      @click.prevent="$emit('click')"
+      @click.prevent="onClick"
   >
     <div :class="$style.ring">
       <AppIcon :iconName="iconName"/>

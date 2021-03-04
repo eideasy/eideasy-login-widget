@@ -4,8 +4,9 @@
   "main": "dist/full/eideasy-widget.umd.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --dest dist/full --target lib --inline-vue --name eideasy-widget src/main.js",
-    "build:external-vue": "vue-cli-service build --dest dist/widget-only --target lib --name eideasy-widget src/main.js",
+    "build:regular": "vue-cli-service build",
+    "build": "vue-cli-service build --mode production --dest dist/full --target lib --inline-vue --name eideasy-widget src/main.js",
+    "build:external-vue": "vue-cli-service build --mode production --dest dist/widget-only --target lib --name eideasy-widget src/main.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

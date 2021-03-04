@@ -16,7 +16,7 @@ export default {
     successCallback: () => store.successCallback,
   },
   methods: {
-    async clickHandler() {
+    async authenticateIdCard() {
       const _self = this;
       mutations.loadingStart();
 
@@ -60,7 +60,7 @@ export default {
       <div :class="$style.unit">
         <MethodButton
             iconName="IconIdCard"
-            @click="clickHandler()"
+            :onClick="authenticateIdCard"
         >
           ID-CARD
         </MethodButton>
