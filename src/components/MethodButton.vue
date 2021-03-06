@@ -73,5 +73,6 @@ export default {
   line-height: 1.33333;
   margin-top: $spacer-2;
   text-transform: uppercase;
+  user-select: none;
 }
 </style>

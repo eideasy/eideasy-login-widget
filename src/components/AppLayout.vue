@@ -29,7 +29,11 @@ export default {
   <div :class="$style.layout">
     <AppHeader></AppHeader>
     <div :class="$style.main">
-      <LoadingOverlay v-if="isLoading"></LoadingOverlay>
+      <transition
+          :name="$style.fade"
+      >
+        <LoadingOverlay v-show="isLoading" />
+      </transition>
       <component :is="currentView"></component>
     </div>
     <AppFooter>
@@ -49,5 +53,16 @@ export default {
   .main {
     position: relative;
     padding: $spacer-6 $spacer-10;
+  }
+
+  .fade {
+    &:global(-enter-active),
+    &:global(-leave-active) {
+      transition: opacity .2s;
+    }
+    &:global(-enter),
+    &:global(-leave-to) {
+      opacity: 0;
+    }
   }
 </style>

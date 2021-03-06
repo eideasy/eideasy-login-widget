@@ -1,30 +1,27 @@
 <script>
 import MethodButton from '../components/MethodButton.vue';
-import {store} from '../store';
+import {actions} from '../store';
 
 export default {
   name: 'MethodSelection',
   components: {
     MethodButton,
   },
-  computed: {
-    sandbox: () => store.sandbox,
-    countryCode: () => store.countryCode,
-    clientId: () => store.clientId,
-    localApiEndpoint: () => store.localApiEndpoint,
-    successCallback: () => store.successCallback,
-  },
   methods: {
-    authenticateIdCard() {
+    ...actions,
+    authenticateWithIdCard() {
+      this.loadingStart();
       this.$eidEasyClient.idCard.authenticate({
         fail: (result) => {
           console.log(result);
         },
         success: (result) => {
+          this.$eidEasyOnSuccess(result);
           console.log(result);
         },
         finished: (result) => {
           console.log(result);
+          this.loadingEnd();
         },
       });
     }
@@ -52,7 +49,7 @@ export default {
       <div :class="$style.unit">
         <MethodButton
             iconName="IconIdCard"
-            :onClick="authenticateIdCard"
+            :onClick="authenticateWithIdCard"
         >
           {{$t("idCard")}}
         </MethodButton>

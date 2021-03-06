@@ -10,11 +10,17 @@ export default {
   props: {
     language: String,
     countryCode: String,
-    clientId: String,
+    clientId: {
+      type: String,
+      required: true,
+    },
     sandbox: Boolean,
     translations: Object,
     onSuccess: Function,
-    localApiEndpoints: Object,
+    localApiEndpoints: {
+      type: Object,
+      required: true,
+    },
   },
   created: function () {
     const {translations, $i18n} = this;

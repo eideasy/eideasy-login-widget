@@ -24,8 +24,8 @@ export default {
     height: 100%;
     left: 0;
     top: 0;
-    background-color: $white;
-    opacity: 0.9;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
   }
 
   .spinnerHolder {
