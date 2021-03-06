@@ -1,3 +1,6 @@
 {
-  "message": "Tere i18n !!"
+  "smartId": "Smart-ID",
+  "mobileId": "Mobiil-ID",
+  "idCard": "ID-kaart",
+  "poweredByEidEasy": "Powered by eIDEasy"
 }

@@ -46,7 +46,6 @@ export default {
 
 <template>
   <div :class="$style.app">
-    {{ langCode }}
     <AppLayout/>
   </div>
 </template>

@@ -1,3 +1,6 @@
 {
-  "message": "hello i18n !!"
+  "smartId": "Smart-ID",
+  "mobileId": "Mobile-ID",
+  "idCard": "ID-card",
+  "poweredByEidEasy": "Powered by eIDEasy"
 }

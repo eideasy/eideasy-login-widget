@@ -33,7 +33,7 @@ export default {
       <component :is="currentView"></component>
     </div>
     <AppFooter>
-      Powered by eIDEasy
+      {{$t("poweredByEidEasy")}}
     </AppFooter>
   </div>
 </template>

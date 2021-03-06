@@ -6,7 +6,6 @@ export default {
 
 <template>
   <div :class="$style.header">
-    I am header {{$t("message")}}
     <slot></slot>
   </div>
 </template>

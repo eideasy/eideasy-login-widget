@@ -72,5 +72,6 @@ export default {
   font-size: $font-size-sm;
   line-height: 1.33333;
   margin-top: $spacer-2;
+  text-transform: uppercase;
 }
 </style>

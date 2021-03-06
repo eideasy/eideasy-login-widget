@@ -48,13 +48,17 @@ export default {
   <div :class="$style.methodSelection">
     <div :class="$style.row">
       <div :class="$style.unit">
-        <MethodButton iconName="IconMobileId">MOBILE-ID</MethodButton>
+        <MethodButton
+            iconName="IconMobileId"
+        >
+          {{$t("mobileId")}}
+        </MethodButton>
       </div>
       <div :class="$style.unit">
         <MethodButton
             iconName="IconSmartId"
         >
-          SMART-ID
+          {{$t("smartId")}}
         </MethodButton>
       </div>
       <div :class="$style.unit">
@@ -62,7 +66,7 @@ export default {
             iconName="IconIdCard"
             :onClick="authenticateIdCard"
         >
-          ID-CARD
+          {{$t("idCard")}}
         </MethodButton>
       </div>
     </div>
