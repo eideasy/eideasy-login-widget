@@ -41,7 +41,12 @@ export default {
       <component :is="currentView"></component>
     </div>
     <AppFooter>
-      {{$t("poweredByEidEasy")}}
+      <a
+        href="https://eideasy.com"
+        :class="$style.eidEasyLink"
+      >
+        {{$t("poweredByEidEasy")}}
+      </a>
     </AppFooter>
   </div>
 </template>
@@ -67,6 +72,18 @@ export default {
     &:global(-enter),
     &:global(-leave-to) {
       opacity: 0;
+    }
+  }
+
+  .eidEasyLink {
+    text-decoration: none;
+    color: currentColor;
+    transition: $transition-duration;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $primary;
     }
   }
 </style>
