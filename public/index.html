@@ -36,14 +36,13 @@
     const eidEasyWidget = document.createElement('eideasy-widget');
 
     var settings = {
-      langCode: 'et', // ISO 639-1 two letter language code
       countryCode: 'EE', // ISO 3166  two letter country code
-      localApiEndpoint: 'http://demo.eideasy.local/api/identity/finish',
-      clientId: '2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg',
+      language: 'et', // ISO 639-1 two letter language code,
       sandbox: true,
-      onSuccess: function(data) {
-        console.log('success');
-        console.log(data);
+      clientId: '2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg',
+      localApiEndpoints: {
+        identityStart: 'http://eid-sample-app.test/api/identity/start',
+        identityFinish: 'http://eid-sample-app.test/api/identity/finish',
       },
       translations: {
         'et': {
@@ -53,6 +52,10 @@
           message: "I am provided in settings",
         }
       }, // translations object to override existing translations or provide completely new translations
+      onSuccess: function(data) {
+        console.log('success');
+        console.log(data);
+      },
     }
 
     Object.keys(settings).forEach(key => {

@@ -8,21 +8,17 @@ export default {
     AppLayout,
   },
   props: {
-    langCode: String,
+    language: String,
     countryCode: String,
-    localApiEndpoint: String,
     clientId: String,
     sandbox: Boolean,
     translations: Object,
     onSuccess: Function,
+    localApiEndpoints: Object,
   },
   created: function () {
     const {translations, $i18n} = this;
     mutations.setCountryCode(this.countryCode);
-    mutations.setLocalApiEndpoint(this.localApiEndpoint);
-    mutations.setClientId(this.clientId);
-    mutations.setSandbox(this.sandbox);
-    mutations.setSuccessCallback(this.onSuccess);
 
     if (translations) {
       Object.keys(translations)
@@ -31,6 +27,8 @@ export default {
             $i18n.setLocaleMessage(locale, {...currentMessages, ...translations[locale]});
           });
     }
+
+
   },
 
   watch: {

@@ -846,10 +846,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@eid-easy/eideasy-js-sdk@^0.8.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@eid-easy/eideasy-js-sdk/-/eideasy-js-sdk-0.7.0.tgz#9804cc5561586cf4abe13046f5a5b8a015ca2613"
-  integrity sha512-HySVvYJOGkto6ajiNcCuQlzHm80kZRtBo8wvDFlJjubPYRvOYv7GzYskltazm9Q7RRJVfOHzlDFCkVzEBT+dMQ==
+"@eid-easy/eideasy-js-sdk@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@eid-easy/eideasy-js-sdk/-/eideasy-js-sdk-0.10.0.tgz#5a4b2a39cf2f324a3f38a847b9fa9ee60c1b8e46"
+  integrity sha512-OE6iZ7vaz8jDGr/KOHETo/P57MSRUuNKjtnPetHIimKioVOEUdX46CQSTFYyZTGh3t7mM97GEIHuAbnm1pEIdA==
   dependencies:
     axios "^0.21.1"
 

@@ -1,7 +1,6 @@
 <script>
 import MethodButton from '../components/MethodButton.vue';
-import {store, mutations} from '../store';
-import IDCardAuth from '@eid-easy/eideasy-js-sdk';
+import {store} from '../store';
 
 export default {
   name: 'MethodSelection',
@@ -16,29 +15,18 @@ export default {
     successCallback: () => store.successCallback,
   },
   methods: {
-    async authenticateIdCard() {
-      const _self = this;
-      mutations.loadingStart();
-
-      const IDCardAuthInstance = new IDCardAuth({
-        sandbox: _self.sandbox,
-        cardCountryCode: _self.countryCode,
-        clientId: _self.clientId,
-        localApiEndpoint: _self.localApiEndpoint,
+    authenticateIdCard() {
+      this.$eidEasyClient.idCard.authenticate({
+        fail: (result) => {
+          console.log(result);
+        },
+        success: (result) => {
+          console.log(result);
+        },
+        finished: (result) => {
+          console.log(result);
+        },
       });
-
-      let authResult;
-      try {
-        authResult = await IDCardAuthInstance.start();
-      } catch (error) {
-        console.error(error);
-      }
-      mutations.loadingEnd();
-      if (authResult) {
-        _self.successCallback(authResult);
-      } else {
-        console.log('fail');
-      }
     }
   }
 }
