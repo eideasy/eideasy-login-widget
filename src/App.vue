@@ -1,6 +1,6 @@
 <script>
 import AppLayout from "./components/AppLayout";
-import {mutations} from './store';
+import {actions} from './store';
 
 export default {
   name: 'App',
@@ -22,9 +22,12 @@ export default {
       required: true,
     },
   },
+  methods: {
+    ...actions,
+  },
   created: function () {
     const {translations, $i18n} = this;
-    mutations.setCountryCode(this.countryCode);
+    this.changeCountry(this.countryCode);
 
     if (translations) {
       Object.keys(translations)
@@ -33,12 +36,11 @@ export default {
             $i18n.setLocaleMessage(locale, {...currentMessages, ...translations[locale]});
           });
     }
-
-
+    
   },
 
   watch: {
-    langCode: {
+    language: {
       handler(newVal) {
         this.$i18n.locale = newVal;
       },
