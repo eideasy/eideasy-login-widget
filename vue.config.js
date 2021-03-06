@@ -9,7 +9,7 @@ module.exports = {
     extract: false,
     loaderOptions: {
       sass: {
-        additionalData: `@import "@/styles/_variables.scss";`
+        additionalData: `@import "@/styles/_functions.scss"; @import "@/styles/_variables.scss";`,
       }
     }
   },
