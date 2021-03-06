@@ -9,6 +9,14 @@ export default {
   props: {
     iconName: String,
     onClick: Function,
+    disabled: Boolean,
+  },
+  methods: {
+    handleClick(e) {
+      if (!this.disabled) {
+        this.onClick(e);
+      }
+    }
   }
 }
 </script>
@@ -16,8 +24,10 @@ export default {
 <template>
   <a
       href="#"
+      role="button"
       :class="$style.methodButton"
-      @click.prevent="onClick"
+      @click.prevent="handleClick"
+      :disabled="disabled"
   >
     <div :class="$style.ring">
       <AppIcon :iconName="iconName"/>
@@ -38,6 +48,7 @@ export default {
   text-decoration: none;
   outline: none;
   text-align: center;
+  cursor: pointer;
 
   &:hover,
   &:focus {

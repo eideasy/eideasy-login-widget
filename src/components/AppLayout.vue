@@ -1,5 +1,5 @@
 <script>
-import {store, mutations} from '../store';
+import {getters, actions} from '../store';
 import MethodSelection from '../views/MethodSelection.vue';
 import AppFooter from './AppFooter';
 import AppHeader from './AppHeader';
@@ -13,14 +13,11 @@ export default {
     AppHeader,
     LoadingOverlay,
   },
-  data: () => ({
-    currentView: store.currentView,
-  }),
   computed: {
-    isLoading: () => store.isLoading,
+    ...getters,
   },
   methods: {
-    setCurrentView: mutations.setCurrentView
+    ...actions,
   }
 }
 </script>

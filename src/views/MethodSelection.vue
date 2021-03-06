@@ -1,11 +1,14 @@
 <script>
 import MethodButton from '../components/MethodButton.vue';
-import {actions} from '../store';
+import {actions, getters} from '../store';
 
 export default {
   name: 'MethodSelection',
   components: {
     MethodButton,
+  },
+  computed: {
+    ...getters,
   },
   methods: {
     ...actions,
@@ -34,6 +37,7 @@ export default {
     <div :class="$style.row">
       <div :class="$style.unit">
         <MethodButton
+            :disabled="isLoading"
             iconName="IconMobileId"
         >
           {{$t("mobileId")}}
@@ -41,6 +45,7 @@ export default {
       </div>
       <div :class="$style.unit">
         <MethodButton
+            :disabled="isLoading"
             iconName="IconSmartId"
         >
           {{$t("smartId")}}
@@ -48,6 +53,7 @@ export default {
       </div>
       <div :class="$style.unit">
         <MethodButton
+            :disabled="isLoading"
             iconName="IconIdCard"
             :onClick="authenticateWithIdCard"
         >
