@@ -14,15 +14,15 @@ export default {
 </script>
 
 <template>
-  <div v-if="flashMessages.length">
-    <div v-for="message in flashMessages" :scheme="message.scheme" :key="message.text">
-      <AppAlert :scheme="message.scheme">
-        {{ message.text }}
-      </AppAlert>
-    </div>
+  <div>
+    <AppAlert
+        v-for="message in flashMessages"
+        :scheme="message.scheme"
+
+        :key="message.text"
+    >
+      {{ message.text }}
+    </AppAlert>
   </div>
 </template>
 
-<style lang="scss" module>
-
-</style>

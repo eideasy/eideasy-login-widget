@@ -46,6 +46,7 @@ export default {
         <MethodButton
             :disabled="isLoading"
             iconName="IconSmartId"
+            :onClick="() => changeView('SmartIdAuth')"
         >
           {{$t("smartId")}}
         </MethodButton>

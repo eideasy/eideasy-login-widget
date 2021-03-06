@@ -2,5 +2,7 @@
   "smartId": "Smart-ID",
   "mobileId": "Mobile-ID",
   "idCard": "ID-card",
-  "poweredByEidEasy": "Powered by eIDEasy"
+  "poweredByEidEasy": "Powered by eIDEasy",
+  "personalIdCode": "Personal identification code",
+  "logIn": "Log In"
 }

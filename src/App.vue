@@ -59,6 +59,7 @@ export default {
   font-family: $font-family;
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
+  line-height: $line-height;
 }
 
 .app * {

@@ -43,6 +43,7 @@ export const actions = {
     mutations.countryCode(countryCode);
   },
   changeView(viewName) {
+    mutations.clearFlashMessages();
     mutations.setCurrentView(viewName);
   },
   addFlashMessage(data) {

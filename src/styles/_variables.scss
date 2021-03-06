@@ -22,6 +22,9 @@ $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
 
+$brand-primary-50: #D2E7FF;
+$brand-primary-200: #6683A4;
+$brand-primary-300: #547193;
 $brand-primary-400: #003168;
 
 $theme-color-primary-400: $brand-primary-400;
@@ -53,6 +56,7 @@ $line-height: 1.4;
 $border-color: $gray-500;
 $border-radius: 6px;
 $border-width: 1px;
+$border-radius-form-element: 4px;
 
 $border-default: $border-width solid $border-color;
 
@@ -82,4 +86,11 @@ $alert-colors: (
   "info": $info,
   "warning": $warning,
   "danger": $danger,
-)
+);
+
+// Inputs
+$input-font-size: 16px;
+$input-border-radius: $border-radius-form-element;
+$input-border: $border-width solid rgba(0, 49, 104, 0.2);
+$input-color: $gray-700;
+$input-label-color: $gray-700;

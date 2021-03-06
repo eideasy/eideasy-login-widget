@@ -2,5 +2,7 @@
   "smartId": "Smart-ID",
   "mobileId": "Mobiil-ID",
   "idCard": "ID-kaart",
-  "poweredByEidEasy": "Powered by eIDEasy"
+  "poweredByEidEasy": "Powered by eIDEasy",
+  "personalIdCode": "Isikukood",
+  "logIn": "Logi sisse"
 }

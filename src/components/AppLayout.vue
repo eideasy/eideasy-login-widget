@@ -1,6 +1,7 @@
 <script>
 import {getters, actions} from '../store';
 import MethodSelection from '../views/MethodSelection.vue';
+import SmartIdAuth from '../views/SmartIdAuth';
 import AppFooter from './AppFooter';
 import AppHeader from './AppHeader';
 import LoadingOverlay from './LoadingOverlay';
@@ -16,6 +17,7 @@ export default {
     LoadingOverlay,
     AppAlert,
     FlashMessages,
+    SmartIdAuth,
   },
   computed: {
     ...getters,
