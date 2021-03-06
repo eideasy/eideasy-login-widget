@@ -14,16 +14,15 @@ export default {
     ...actions,
     authenticateWithIdCard() {
       this.loadingStart();
+      this.clearFlashMessages();
       this.$eidEasyClient.idCard.authenticate({
         fail: (result) => {
-          console.log(result);
+          this.addFlashMessage(result);
         },
         success: (result) => {
           this.$eidEasyOnSuccess(result);
-          console.log(result);
         },
-        finished: (result) => {
-          console.log(result);
+        finished: () => {
           this.loadingEnd();
         },
       });

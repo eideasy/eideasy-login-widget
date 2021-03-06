@@ -28,7 +28,7 @@ export default {
     font-size: $font-size-md;
     position: relative;
     padding: $spacer-2 $spacer-3;
-    margin-bottom: $spacer-3;
+    margin-bottom: $spacer-4;
     border: 1px solid transparent;
     border-radius: $border-radius;
     line-height: $line-height;
