@@ -40,7 +40,7 @@ export const actions = {
     mutations.setIsLoading(false);
   },
   changeCountry(countryCode) {
-    mutations.countryCode(countryCode);
+    mutations.setCountryCode(countryCode);
   },
   changeView(viewName) {
     mutations.clearFlashMessages();
