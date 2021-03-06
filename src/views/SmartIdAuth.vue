@@ -1,25 +1,33 @@
 <script>
-import AppInput from '../components/AppInput';
-import AppButton from '../components/AppButton';
+import AppForm from '../components/AppForm';
 
 export default {
   name: 'SmartIdAuth',
   components: {
-    AppInput,
-    AppButton,
+    AppForm,
+  },
+  data() {
+    return {
+      schema: [
+        {
+          type: 'text',
+          name: 'idcode',
+          label: this.$t('personalIdCode'),
+          validation: 'required',
+        },
+        {
+          type: 'submit',
+          label: this.$t('logIn')
+        }
+      ]
+    }
   }
 }
 </script>
 
 <template>
   <div>
-    <AppInput
-        type="text"
-        id=""
-    >
-      <template v-slot:label>{{ $t('personalIdCode') }}</template>
-    </AppInput>
-    <AppButton>{{ $t('logIn') }}</AppButton>
+    <AppForm :schema="schema"/>
   </div>
 </template>
 
