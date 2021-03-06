@@ -44,6 +44,7 @@ export default {
       <a
         href="https://eideasy.com"
         :class="$style.eidEasyLink"
+        target="_blank"
       >
         {{$t("poweredByEidEasy")}}
       </a>
