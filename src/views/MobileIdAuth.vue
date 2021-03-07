@@ -12,6 +12,7 @@ export default {
     return {
       formValue: {},
       fieldErrors: {},
+      challenge: undefined,
       schema: [
         {
           type: 'tel',
@@ -37,11 +38,21 @@ export default {
   },
   methods: {
     ...actions,
+    clearErrors() {
+      this.fieldErrors = {};
+    },
     authenticate() {
       this.loadingStart();
       this.clearFlashMessages();
+      this.clearErrors();
       this.$eidEasyClient.mobileId.authenticate({
         ...this.formValue,
+        started: (result) => {
+          if (result.response && result.response.data && result.response.data.challenge) {
+            this.challenge = result.response.data.challenge;
+            this.loadingEnd();
+          }
+        },
         fail: (result) => {
           this.addFlashMessage(result);
           this.fieldErrors = getFieldErrors(result);
@@ -50,6 +61,7 @@ export default {
           this.$eidEasyOnSuccess(result);
         },
         finished: () => {
+          this.challenge = undefined;
           this.loadingEnd();
         },
       });
@@ -60,17 +72,18 @@ export default {
 
 <template>
   <div>
-    <AppForm
-      id="mobileIdForm"
-      v-model="formValue"
-      :schema="schema"
-      :on-submit="authenticate"
-      :errors="fieldErrors"
-    />
-
-    <pre>
-      {{ formValue }}
-    </pre>
+    <div v-if="challenge">
+      {{ challenge }}
+    </div>
+    <div v-else>
+      <AppForm
+        id="mobileIdForm"
+        v-model="formValue"
+        :schema="schema"
+        :on-submit="authenticate"
+        :errors="fieldErrors"
+      />
+    </div>
   </div>
 </template>
 
