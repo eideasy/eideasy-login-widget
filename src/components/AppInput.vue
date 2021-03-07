@@ -6,12 +6,30 @@ export default {
     name: String,
     placeholder: String,
     id: String,
+    onInput: {
+      type: Function,
+      default: () => {},
+    },
+  },
+  data() {
+    return {
+      inputValue: undefined,
+    }
+  },
+  watch: {
+    inputValue: {
+      handler(newVal) {
+        this.onInput(newVal);
+      },
+      immediate: true,
+    },
   }
 }
 </script>
 
 <template>
   <input
+    v-model="inputValue"
     :class="$style.input"
     v-bind="{type, name, placeholder, id}"
   >

@@ -15,6 +15,10 @@ export default {
     FormField,
     FormButton,
   },
+  model: {
+    prop: 'formValue',
+    event: 'input'
+  },
   props: {
     id: {
       type: String,
@@ -23,7 +27,11 @@ export default {
     schema: {
       required: true,
       type: Array,
-    }
+    },
+    formValue: {
+      type: Object,
+      default: () => ({})
+    },
   },
   data() {
     return {
@@ -37,12 +45,21 @@ export default {
       }
       return undefined;
     },
+    handleInput(key, value) {
+      this.formValue[key] = value;
+      this.$emit('input', {
+        ...this.formValue,
+        [key]: value,
+      })
+    },
   }
 }
 </script>
 
 <template>
-  <form :id="id">
+  <form
+    :id="id"
+  >
     <div
       v-for="item in schema"
       :key="item.name + item.label"
@@ -50,9 +67,16 @@ export default {
     >
       <Component
         :is="formComponentsByType[item.type]"
-        v-bind="{...item, id: formComponentId(item.name)}"
+        v-bind="{
+          ...item,
+          id: formComponentId(item.name),
+          onInput: (value) => handleInput(item.name, value),
+        }"
       />
     </div>
+    <pre>
+      {{ formValue }}
+    </pre>
   </form>
 </template>
 

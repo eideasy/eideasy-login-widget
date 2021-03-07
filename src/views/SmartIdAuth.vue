@@ -8,6 +8,7 @@ export default {
   },
   data() {
     return {
+      formValue: {},
       schema: [
         {
           type: 'text',
@@ -29,6 +30,7 @@ export default {
   <div>
     <AppForm
       id="smartIdForm"
+      v-model="formValue"
       :schema="schema"
     />
   </div>

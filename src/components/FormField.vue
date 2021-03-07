@@ -11,6 +11,10 @@ export default {
     placeholder: String,
     id: String,
     label: String,
+    onInput: {
+      type: Function,
+      default: () => {},
+    },
   }
 }
 </script>
@@ -25,7 +29,7 @@ export default {
     >
       {{ label }}
     </label>
-    <AppInput v-bind="{type, name, placeholder, id}" />
+    <AppInput v-bind="{type, name, placeholder, id, onInput}" />
   </div>
 </template>
 
