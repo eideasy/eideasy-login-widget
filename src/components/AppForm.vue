@@ -85,4 +85,8 @@ export default {
 .formElement {
   display: block;
 }
+
+.formElement + .formElement {
+  margin-top: $spacer-6;
+}
 </style>

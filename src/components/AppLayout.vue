@@ -7,6 +7,7 @@ import AppHeader from './AppHeader';
 import LoadingOverlay from './LoadingOverlay';
 import AppAlert from './AppAlert';
 import FlashMessages from './FlashMessages';
+import MobileIdAuth from '../views/MobileIdAuth';
 
 export default {
   name: 'AppLayout',
@@ -18,6 +19,7 @@ export default {
     AppAlert,
     FlashMessages,
     SmartIdAuth,
+    MobileIdAuth,
   },
   computed: {
     ...getters,
@@ -30,15 +32,15 @@ export default {
 
 <template>
   <div :class="$style.layout">
-    <AppHeader></AppHeader>
+    <AppHeader />
     <div :class="$style.main">
       <FlashMessages />
       <transition
-          :name="$style.fade"
+        :name="$style.fade"
       >
         <LoadingOverlay v-show="isLoading" />
       </transition>
-      <component :is="currentView"></component>
+      <component :is="currentView" />
     </div>
     <AppFooter>
       <a
@@ -46,7 +48,7 @@ export default {
         :class="$style.eidEasyLink"
         target="_blank"
       >
-        {{$t("poweredByEidEasy")}}
+        {{ $t("poweredByEidEasy") }}
       </a>
     </AppFooter>
   </div>

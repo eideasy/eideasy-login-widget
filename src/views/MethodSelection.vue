@@ -36,28 +36,29 @@ export default {
     <div :class="$style.row">
       <div :class="$style.unit">
         <MethodButton
-            :disabled="isLoading"
-            iconName="IconMobileId"
+          :disabled="isLoading"
+          icon-name="IconMobileId"
+          :on-click="() => changeView('MobileIdAuth')"
         >
-          {{$t("mobileId")}}
+          {{ $t("mobileId") }}
         </MethodButton>
       </div>
       <div :class="$style.unit">
         <MethodButton
-            :disabled="isLoading"
-            iconName="IconSmartId"
-            :onClick="() => changeView('SmartIdAuth')"
+          :disabled="isLoading"
+          icon-name="IconSmartId"
+          :on-click="() => changeView('SmartIdAuth')"
         >
-          {{$t("smartId")}}
+          {{ $t("smartId") }}
         </MethodButton>
       </div>
       <div :class="$style.unit">
         <MethodButton
-            :disabled="isLoading"
-            iconName="IconIdCard"
-            :onClick="authenticateWithIdCard"
+          :disabled="isLoading"
+          icon-name="IconIdCard"
+          :on-click="authenticateWithIdCard"
         >
-          {{$t("idCard")}}
+          {{ $t("idCard") }}
         </MethodButton>
       </div>
     </div>

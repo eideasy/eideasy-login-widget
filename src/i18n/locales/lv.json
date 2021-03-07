@@ -3,7 +3,7 @@
   "mobileId": "Mobile-ID",
   "idCard": "ID-card",
   "poweredByEidEasy": "Powered by eIDEasy",
-  "personalIdCode": "Personal identity code",
-  "logIn": "Log In",
-  "phoneNumber": "Phone number"
+  "personalIdCode": "Personas kods",
+  "logIn": "Pieslēgties",
+  "phoneNumber": "Telefona numurs"
 }

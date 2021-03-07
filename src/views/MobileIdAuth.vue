@@ -2,7 +2,7 @@
 import AppForm from '../components/AppForm';
 
 export default {
-  name: 'SmartIdAuth',
+  name: 'MobileIdAuth',
   components: {
     AppForm,
   },
@@ -10,6 +10,12 @@ export default {
     return {
       formValue: {},
       schema: [
+        {
+          type: 'tel',
+          name: 'phone',
+          label: this.$t('phoneNumber'),
+          validation: 'required',
+        },
         {
           type: 'text',
           name: 'idcode',
@@ -29,7 +35,7 @@ export default {
 <template>
   <div>
     <AppForm
-      id="smartIdForm"
+      id="mobileIdForm"
       v-model="formValue"
       :schema="schema"
     />
