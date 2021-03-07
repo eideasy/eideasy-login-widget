@@ -70,8 +70,9 @@ export default {
         v-bind="{
           ...item,
           id: formComponentId(item.name),
-          onInput: (value) => handleInput(item.name, value),
+          value: formValue[item.name],
         }"
+        @input="(value) => handleInput(item.name, value)"
       />
     </div>
     <pre>

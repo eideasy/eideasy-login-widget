@@ -22,6 +22,11 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    changeId() {
+      this.formValue.idcode = this.formValue.idcode + 'asdfa';
+    }
   }
 }
 </script>
@@ -33,6 +38,10 @@ export default {
       v-model="formValue"
       :schema="schema"
     />
+
+    <button @click="changeId">
+      Chnage id
+    </button>
   </div>
 </template>
 

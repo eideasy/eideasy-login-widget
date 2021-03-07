@@ -6,32 +6,26 @@ export default {
     name: String,
     placeholder: String,
     id: String,
+    value: [Number, String, Array, Object],
     onInput: {
       type: Function,
       default: () => {},
     },
   },
-  data() {
-    return {
-      inputValue: undefined,
+  methods: {
+    handleInput (e) {
+      this.$emit('input', e.target.value)
     }
-  },
-  watch: {
-    inputValue: {
-      handler(newVal) {
-        this.onInput(newVal);
-      },
-      immediate: true,
-    },
   }
 }
 </script>
 
 <template>
   <input
-    v-model="inputValue"
     :class="$style.input"
     v-bind="{type, name, placeholder, id}"
+    :value="value"
+    @input="handleInput"
   >
 </template>
 

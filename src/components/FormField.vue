@@ -11,10 +11,16 @@ export default {
     placeholder: String,
     id: String,
     label: String,
+    value: [Number, String, Array, Object],
     onInput: {
       type: Function,
       default: () => {},
     },
+  },
+  methods: {
+    handleInput (value) {
+      this.$emit('input', value)
+    }
   }
 }
 </script>
@@ -29,7 +35,10 @@ export default {
     >
       {{ label }}
     </label>
-    <AppInput v-bind="{type, name, placeholder, id, onInput}" />
+    <AppInput
+      v-bind="{type, name, placeholder, id, value}"
+      @input="handleInput"
+    />
   </div>
 </template>
 
