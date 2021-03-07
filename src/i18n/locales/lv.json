@@ -5,5 +5,6 @@
   "poweredByEidEasy": "Powered by eIDEasy",
   "personalIdCode": "Personas kods",
   "logIn": "Pieslēgties",
-  "phoneNumber": "Telefona numurs"
+  "phoneNumber": "Telefona numurs",
+  "thisFieldIsRequired": "This field is required"
 }

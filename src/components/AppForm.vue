@@ -40,7 +40,21 @@ export default {
   data() {
     return {
       formComponentsByType,
+      validationErrors: {},
     }
+  },
+  computed: {
+    hasValidationErrors() {
+      return Object.keys(this.validationErrors).length > 0;
+    }
+  },
+  watch: {
+    formValue: {
+      handler() {
+        this.validate();
+      },
+      immediate: false,
+    },
   },
   methods: {
     formComponentId(modifier) {
@@ -57,8 +71,45 @@ export default {
       })
     },
     handleSubmit() {
-      this.onSubmit();
-    }
+      this.validate();
+      if (!this.hasValidationErrors) {
+        this.onSubmit();
+      }
+    },
+    validate() {
+      const validationErrors = {};
+      this.schema.forEach(({name, validation}) => {
+        const fieldValue = this.formValue[name];
+        // do not validate fields that do not have validation rules
+        // and fields that do not have a value yet i.e. fields that user has not yet touched
+        // this avoids situations where user starts typing in one field, and all the other fields get
+        // prematurely validated
+        if (!validation || fieldValue === undefined) {
+          return;
+        }
+        const fieldErrors = this.validateField(fieldValue, validation);
+        if (fieldErrors.length) {
+          validationErrors[name] = fieldErrors;
+        }
+      });
+      this.validationErrors = validationErrors;
+    },
+    validateRule(value, rule) {
+      if (rule === 'required') {
+        if (!value) {
+          return this.$t('thisFieldIsRequired');
+        }
+      }
+    },
+    validateField(value, rules) {
+      return rules.reduce((acc, rule) => {
+        const validationResult = this.validateRule(value, rule);
+        if (validationResult) {
+          acc.push(validationResult);
+        }
+        return acc;
+      }, []);
+    },
   }
 }
 </script>
@@ -79,6 +130,7 @@ export default {
           ...item,
           id: formComponentId(item.name),
           value: formValue[item.name],
+          errors: validationErrors[item.name],
         }"
         @input="(value) => handleInput(item.name, value)"
       />

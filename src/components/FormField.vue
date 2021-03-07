@@ -1,5 +1,6 @@
 <script>
 import AppInput from './AppInput';
+
 export default {
   name: 'FormField',
   components: {
@@ -11,14 +12,19 @@ export default {
     placeholder: String,
     id: String,
     label: String,
-    value: [Number, String, Array, Object],
-    onInput: {
-      type: Function,
-      default: () => {},
+    errors: {
+      type: Array,
+      default: () => ([]),
     },
+    value: [Number, String, Array, Object],
+  },
+  computed: {
+    hasErrors() {
+      return this.errors.length > 0;
+    }
   },
   methods: {
-    handleInput (value) {
+    handleInput(value) {
       this.$emit('input', value)
     }
   }
@@ -36,9 +42,21 @@ export default {
       {{ label }}
     </label>
     <AppInput
-      v-bind="{type, name, placeholder, id, value}"
+      v-bind="{type, name, placeholder, id, value, hasErrors}"
       @input="handleInput"
     />
+    <ul
+      v-if="hasErrors"
+      :class="$style.validationContainer"
+    >
+      <li
+        v-for="error in errors"
+        :key="error"
+        :class="$style.validationMessage"
+      >
+        {{ error }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -49,7 +67,23 @@ export default {
   color: $input-label-color;
   line-height: 1.1429;
   margin-bottom: $spacer-2;
-  padding-left: $spacer-4;
+  padding-left: $input-text-indent;
   letter-spacing: 0.028571em;
+}
+
+.validationContainer {
+  @extend .reset-list;
+  margin-top: $spacer-2;
+}
+
+.validationMessage {
+  @extend .reset-list;
+  font-size: $font-size-sm;
+  padding-left: $input-text-indent;
+  color: $danger;
+}
+
+.validationMessage + .validationMessage {
+  margin-top: $spacer-1;
 }
 </style>

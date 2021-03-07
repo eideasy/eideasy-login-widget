@@ -15,13 +15,13 @@ export default {
           type: 'tel',
           name: 'phone',
           label: this.$t('phoneNumber'),
-          validation: 'required',
+          validation: ['required'],
         },
         {
           type: 'text',
           name: 'idcode',
           label: this.$t('personalIdCode'),
-          validation: 'required',
+          validation: ['required'],
         },
         {
           type: 'submit',

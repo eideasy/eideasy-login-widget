@@ -7,6 +7,7 @@ export default {
     placeholder: String,
     id: String,
     value: [Number, String, Array, Object],
+    hasErrors: Boolean,
     onInput: {
       type: Function,
       default: () => {},
@@ -22,7 +23,7 @@ export default {
 
 <template>
   <input
-    :class="$style.input"
+    :class="[$style.input, {[$style.error]: hasErrors}]"
     v-bind="{type, name, placeholder, id}"
     :value="value"
     @input="handleInput"
@@ -40,11 +41,21 @@ export default {
     outline: none;
     border: $input-border;
     line-height: 1.2;
-    padding: $spacer-4 $spacer-4;
+    padding: $spacer-4 $input-text-indent;
     letter-spacing: 0.0275em;
 
     &:focus {
       border-color: $primary;
+      box-shadow: 0 0 0 2px rgba($primary, 0.2);
+    }
+  }
+
+  .error {
+    border-color: $danger;
+
+    &:focus {
+      border-color: $danger;
+      box-shadow: 0 0 0 2px rgba($danger, 0.2);
     }
   }
 </style>
