@@ -20,7 +20,7 @@ export default {
 
 <template>
   <IconBase>
-    <Component :is="iconName"></Component>
+    <Component :is="iconName" />
   </IconBase>
 </template>
 

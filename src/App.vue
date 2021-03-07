@@ -8,22 +8,39 @@ export default {
     AppLayout,
   },
   props: {
-    language: String,
-    countryCode: String,
+    language: {
+      type: String,
+      default: 'en',
+    },
+    countryCode: {
+      type: String,
+      default: 'ee',
+    },
     clientId: {
       type: String,
       required: true,
     },
     sandbox: Boolean,
-    translations: Object,
-    onSuccess: Function,
+    translations: {
+      type: Object,
+      default: () => ({}),
+    },
+    onSuccess: {
+      type: Function,
+      default: () => {},
+    },
     localApiEndpoints: {
       type: Object,
       required: true,
     },
   },
-  methods: {
-    ...actions,
+  watch: {
+    language: {
+      handler(newVal) {
+        this.$i18n.locale = newVal;
+      },
+      immediate: true,
+    },
   },
   created: function () {
     const {translations, $i18n} = this;
@@ -36,23 +53,16 @@ export default {
             $i18n.setLocaleMessage(locale, {...currentMessages, ...translations[locale]});
           });
     }
-    
   },
-
-  watch: {
-    language: {
-      handler(newVal) {
-        this.$i18n.locale = newVal;
-      },
-      immediate: true,
-    },
+  methods: {
+    ...actions,
   },
 }
 </script>
 
 <template>
   <div :class="$style.app">
-    <AppLayout/>
+    <AppLayout />
   </div>
 </template>
 

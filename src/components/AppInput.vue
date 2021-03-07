@@ -11,31 +11,13 @@ export default {
 </script>
 
 <template>
-  <div>
-    <label
-        :for="id"
-        :class="$style.label"
-    >
-      <slot name="label"></slot>
-    </label>
-    <input
-        :class="$style.input"
-        v-bind="{type, name, placeholder, id}"
-    >
-  </div>
+  <input
+    :class="$style.input"
+    v-bind="{type, name, placeholder, id}"
+  >
 </template>
 
 <style lang="scss" module>
-  .label {
-    display: block;
-    font-size: $font-size-md;
-    color: $input-label-color;
-    line-height: 1.1429;
-    margin-bottom: $spacer-2;
-    padding-left: $spacer-4;
-    letter-spacing: 0.028571em;
-  }
-
   .input {
     color: $input-color;
     font-size: $input-font-size;

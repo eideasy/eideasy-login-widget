@@ -27,7 +27,10 @@ export default {
 
 <template>
   <div>
-    <AppForm :schema="schema"/>
+    <AppForm
+      id="smartIdForm"
+      :schema="schema"
+    />
   </div>
 </template>
 

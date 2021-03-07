@@ -1,38 +1,63 @@
 <script>
-import AppInput from '../components/AppInput';
-import AppButton from '../components/AppButton';
+import FormButton from './FormButton';
+import FormField from './FormField';
 
-// TODO: perhaps create a component called FormElement,
-//  that knows how to render a button or a form field or anything else
+const formComponentsByType = {
+  submit: 'FormButton',
+  text: 'FormField',
+  number: 'FormField',
+  tel: 'FormField',
+};
+
 export default {
   name: 'AppForm',
   components: {
-    AppInput,
-    AppButton,
+    FormField,
+    FormButton,
   },
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     schema: {
       required: true,
       type: Array,
     }
+  },
+  data() {
+    return {
+      formComponentsByType,
+    }
+  },
+  methods: {
+    formComponentId(modifier) {
+      if (modifier) {
+        return this.id + '_' + modifier;
+      }
+      return undefined;
+    },
   }
 }
 </script>
 
 <template>
-  <form>
-    I am form
-    {{ schema }}
-    <AppInput
-        type="text"
-        id=""
+  <form :id="id">
+    <div
+      v-for="item in schema"
+      :key="item.name + item.label"
+      :class="$style.formElement"
     >
-      <template v-slot:label>{{ $t('personalIdCode') }}</template>
-    </AppInput>
-    <AppButton>{{ $t('logIn') }}</AppButton>
+      <Component
+        :is="formComponentsByType[item.type]"
+        v-bind="{...item, id: formComponentId(item.name)}"
+      />
+    </div>
   </form>
 </template>
 
 <style lang="scss" module>
-
+.formElement {
+  display: block;
+}
 </style>
