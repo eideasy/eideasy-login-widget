@@ -2,7 +2,7 @@ import Vue from "vue";
 
 export const store = Vue.observable({
   countryCode: 'EE',
-  currentView: 'MethodSelection',
+  currentView: 'MobileIdAuth',
   isLoading: false,
   flashMessages: [],
 });

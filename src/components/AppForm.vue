@@ -30,8 +30,12 @@ export default {
     },
     formValue: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
+    onSubmit: {
+      type: Function,
+      default: () => {},
+    }
   },
   data() {
     return {
@@ -52,6 +56,9 @@ export default {
         [key]: value,
       })
     },
+    handleSubmit() {
+      this.onSubmit();
+    }
   }
 }
 </script>
@@ -59,6 +66,7 @@ export default {
 <template>
   <form
     :id="id"
+    @submit.prevent="handleSubmit"
   >
     <div
       v-for="item in schema"
@@ -75,9 +83,6 @@ export default {
         @input="(value) => handleInput(item.name, value)"
       />
     </div>
-    <pre>
-      {{ formValue }}
-    </pre>
   </form>
 </template>
 

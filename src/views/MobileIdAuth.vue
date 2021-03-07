@@ -1,5 +1,6 @@
 <script>
 import AppForm from '../components/AppForm';
+import {actions, getters} from '../store';
 
 export default {
   name: 'MobileIdAuth',
@@ -29,6 +30,28 @@ export default {
       ]
     }
   },
+  computed: {
+    ...getters,
+  },
+  methods: {
+    ...actions,
+    authenticate() {
+      this.loadingStart();
+      this.clearFlashMessages();
+      this.$eidEasyClient.mobileId.authenticate({
+        ...this.formValue,
+        fail: (result) => {
+          this.addFlashMessage(result);
+        },
+        success: (result) => {
+          this.$eidEasyOnSuccess(result);
+        },
+        finished: () => {
+          this.loadingEnd();
+        },
+      });
+    }
+  }
 }
 </script>
 
@@ -38,7 +61,12 @@ export default {
       id="mobileIdForm"
       v-model="formValue"
       :schema="schema"
+      :on-submit="authenticate"
     />
+
+    <pre>
+      {{ formValue }}
+    </pre>
   </div>
 </template>
 
