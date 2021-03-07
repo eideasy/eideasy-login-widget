@@ -1,6 +1,7 @@
 <script>
 import AppForm from '../components/AppForm';
 import {actions, getters} from '../store';
+import getFieldErrors from '../getFieldErrors';
 
 export default {
   name: 'MobileIdAuth',
@@ -36,18 +37,6 @@ export default {
   },
   methods: {
     ...actions,
-    getFieldErrors(result) {
-      console.log(result);
-      let errors = {};
-      if (result.error &&
-          result.error.response &&
-          result.error.response.data &&
-          result.error.response.data.errors
-      ) {
-        errors = result.error.response.data.errors;
-      }
-      return errors;
-    },
     authenticate() {
       this.loadingStart();
       this.clearFlashMessages();
@@ -55,7 +44,7 @@ export default {
         ...this.formValue,
         fail: (result) => {
           this.addFlashMessage(result);
-          this.fieldErrors = this.getFieldErrors(result);
+          this.fieldErrors = getFieldErrors(result);
         },
         success: (result) => {
           this.$eidEasyOnSuccess(result);
