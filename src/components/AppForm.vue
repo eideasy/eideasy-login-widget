@@ -35,6 +35,10 @@ export default {
     onSubmit: {
       type: Function,
       default: () => {},
+    },
+    errors: {
+      type: Object,
+      default: () => {},
     }
   },
   data() {
@@ -44,9 +48,9 @@ export default {
     }
   },
   computed: {
-    hasValidationErrors() {
+    hasFixableErrors() {
       return Object.keys(this.validationErrors).length > 0;
-    }
+    },
   },
   watch: {
     formValue: {
@@ -63,6 +67,11 @@ export default {
       }
       return undefined;
     },
+    fieldErrors(name) {
+      const fieldValidationErrors = this.validationErrors[name] || [];
+      const fieldErrors = this.errors[name] || [];
+      return [...fieldValidationErrors, ...fieldErrors];
+    },
     handleInput(key, value) {
       this.formValue[key] = value;
       this.$emit('input', {
@@ -71,25 +80,40 @@ export default {
       })
     },
     handleSubmit() {
-      this.validate();
-      if (!this.hasValidationErrors) {
+      this.validate({force: true});
+
+      // fixable errors are errors that can be fixed on the client side and do not
+      // need server side validation
+      // for all the other errors, we want to allow the user to submit
+      if (!this.hasFixableErrors) {
         this.onSubmit();
       }
     },
-    validate() {
-      const validationErrors = {};
+    validate(options = {}) {
+      const validationErrors = {
+        ...this.validationErrors,
+      };
       this.schema.forEach(({name, validation}) => {
         const fieldValue = this.formValue[name];
+
         // do not validate fields that do not have validation rules
-        // and fields that do not have a value yet i.e. fields that user has not yet touched
+        if (!validation) {
+          return;
+        }
+
+        // do not validate fields that the user has not yet touched
         // this avoids situations where user starts typing in one field, and all the other fields get
         // prematurely validated
-        if (!validation || fieldValue === undefined) {
+        // we can use options.force to override this behaviour, e.g. when use clicks the submit button
+        // we want to actually validate all the fields
+        if (!options.force && fieldValue === undefined) {
           return;
         }
         const fieldErrors = this.validateField(fieldValue, validation);
         if (fieldErrors.length) {
           validationErrors[name] = fieldErrors;
+        } else {
+          delete validationErrors[name];
         }
       });
       this.validationErrors = validationErrors;
@@ -130,7 +154,7 @@ export default {
           ...item,
           id: formComponentId(item.name),
           value: formValue[item.name],
-          errors: validationErrors[item.name],
+          errors: fieldErrors(item.name),
         }"
         @input="(value) => handleInput(item.name, value)"
       />

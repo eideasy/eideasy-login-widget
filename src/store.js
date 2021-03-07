@@ -60,6 +60,11 @@ export const actions = {
       message.scheme = 'danger';
       message.text = data.error.response.data.message;
     }
+
+    if (data.message) {
+      message.scheme = 'danger';
+      message.text = data.message;
+    }
     mutations.addFlashMessage(message);
   },
   clearFlashMessages() {

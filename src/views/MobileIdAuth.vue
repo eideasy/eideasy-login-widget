@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       formValue: {},
+      fieldErrors: {},
       schema: [
         {
           type: 'tel',
@@ -35,6 +36,18 @@ export default {
   },
   methods: {
     ...actions,
+    getFieldErrors(result) {
+      console.log(result);
+      let errors = {};
+      if (result.error &&
+          result.error.response &&
+          result.error.response.data &&
+          result.error.response.data.errors
+      ) {
+        errors = result.error.response.data.errors;
+      }
+      return errors;
+    },
     authenticate() {
       this.loadingStart();
       this.clearFlashMessages();
@@ -42,6 +55,7 @@ export default {
         ...this.formValue,
         fail: (result) => {
           this.addFlashMessage(result);
+          this.fieldErrors = this.getFieldErrors(result);
         },
         success: (result) => {
           this.$eidEasyOnSuccess(result);
@@ -62,6 +76,7 @@ export default {
       v-model="formValue"
       :schema="schema"
       :on-submit="authenticate"
+      :errors="fieldErrors"
     />
 
     <pre>
