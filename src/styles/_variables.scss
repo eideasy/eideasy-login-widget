@@ -8,6 +8,8 @@ $gray-300: #E7E7E7;
 $gray-400: #F7F7F7;
 $gray-500: #D9D9D9;
 $gray-600: #9CA6B1;
+$gray-650: #6C696A;
+$gray-680: #574F52;
 $gray-700: #3A3A3A;
 $black:    #000;
 
@@ -28,8 +30,10 @@ $brand-primary-300: #547193;
 $brand-primary-400: #003168;
 
 $theme-color-primary-400: $brand-primary-400;
+$theme-color-secondary-400: #34A853;
 
 $primary: $theme-color-primary-400;
+$secondary: $theme-color-secondary-400;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
@@ -50,6 +54,7 @@ $font-size-sm: 12px;
 $font-size-xs: 10px;
 
 $font-weight-normal: 400;
+$font-weight-bold: 700;
 
 $line-height: 1.4;
 

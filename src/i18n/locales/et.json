@@ -6,5 +6,6 @@
   "personalIdCode": "Isikukood",
   "logIn": "Logi sisse",
   "phoneNumber": "Mobiili number",
-  "thisFieldIsRequired": "See on kohustuslik väli"
+  "thisFieldIsRequired": "See on kohustuslik väli",
+  "yourVerificationCode": "Kontrollkood:"
 }

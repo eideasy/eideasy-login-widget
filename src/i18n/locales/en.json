@@ -6,5 +6,6 @@
   "personalIdCode": "Personal identity code",
   "logIn": "Log In",
   "phoneNumber": "Phone number",
-  "thisFieldIsRequired": "This field is required"
+  "thisFieldIsRequired": "This field is required",
+  "yourVerificationCode": "Your verification code:"
 }

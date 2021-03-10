@@ -6,5 +6,6 @@
   "personalIdCode": "Персональный код",
   "logIn": "Войти",
   "phoneNumber": "Номер телефона",
-  "thisFieldIsRequired": "This field is required"
+  "thisFieldIsRequired": "This field is required",
+  "yourVerificationCode": "Your verification code:"
 }

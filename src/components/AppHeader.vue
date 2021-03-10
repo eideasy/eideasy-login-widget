@@ -6,7 +6,7 @@ export default {
 
 <template>
   <div :class="$style.header">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

@@ -6,5 +6,6 @@
   "personalIdCode": "Personas kods",
   "logIn": "Pieslēgties",
   "phoneNumber": "Telefona numurs",
-  "thisFieldIsRequired": "This field is required"
+  "thisFieldIsRequired": "This field is required",
+  "yourVerificationCode": "Your verification code:"
 }

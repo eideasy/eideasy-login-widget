@@ -7,7 +7,7 @@ export default {
 <template>
   <div :class="$style.footer">
     <div :class="$style.text">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

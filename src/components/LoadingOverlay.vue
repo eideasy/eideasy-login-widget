@@ -12,7 +12,7 @@ export default {
 <template>
   <div :class="$style.loadingOverlay">
     <div :class="$style.spinnerHolder">
-      <AppSpinner/>
+      <AppSpinner />
     </div>
   </div>
 </template>

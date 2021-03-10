@@ -23,18 +23,18 @@ export default {
 
 <template>
   <a
-      href="#"
-      role="button"
-      :class="$style.methodButton"
-      @click.prevent="handleClick"
-      :disabled="disabled"
+    href="#"
+    role="button"
+    :class="$style.methodButton"
+    :disabled="disabled"
+    @click.prevent="handleClick"
   >
     <div :class="$style.ring">
-      <AppIcon :iconName="iconName"/>
+      <AppIcon :icon-name="iconName" />
     </div>
 
     <div :class="$style.text">
-      <slot></slot>
+      <slot />
     </div>
   </a>
 </template>

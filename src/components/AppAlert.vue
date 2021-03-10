@@ -18,8 +18,8 @@ export default {
 
 <template>
   <div :class="[$style.alert, schemeClassName]">
-    <slot name="header"></slot>
-    <slot></slot>
+    <slot name="header" />
+    <slot />
   </div>
 </template>
 

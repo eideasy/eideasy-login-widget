@@ -16,10 +16,10 @@ export default {
 <template>
   <div>
     <AppAlert
-        v-for="message in flashMessages"
-        :scheme="message.scheme"
+      v-for="message in flashMessages"
+      :key="message.text"
 
-        :key="message.text"
+      :scheme="message.scheme"
     >
       {{ message.text }}
     </AppAlert>
