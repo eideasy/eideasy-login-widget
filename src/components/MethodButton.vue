@@ -49,11 +49,14 @@ export default {
   outline: none;
   text-align: center;
   cursor: pointer;
+  transform: translateY(0);
+  transition: .1s;
 
   &:hover,
   &:focus {
     text-decoration: none;
     outline: none;
+    transform: translateY(-2px);
   }
 
   svg {
@@ -72,11 +75,16 @@ export default {
   border: $border-default;
   padding: $spacer-2;
   transition: $transition-duration;
+  transform: scale3d(1, 1, 1);
 }
 
-.methodButton:hover .ring,
-.methodButton:focus .ring {
-  border-color: currentColor;
+.methodButton:hover,
+.methodButton:focus {
+  .ring {
+    border-color: currentColor;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.1);
+    transform: scale3d(1.05, 1.05, 1);
+  }
 }
 
 .text {

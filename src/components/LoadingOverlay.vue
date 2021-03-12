@@ -26,6 +26,7 @@ export default {
     top: 0;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(3px);
+    z-index: 900;
   }
 
   .spinnerHolder {

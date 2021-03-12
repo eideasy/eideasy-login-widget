@@ -69,11 +69,12 @@ export default {
 .row {
   display: flex;
   justify-content: center;
-  margin-left: -$spacer-2;
-  margin-right: -$spacer-2;
+  margin-left: -$spacer-3;
+  margin-right: -$spacer-3;
+  flex-wrap: wrap;
 }
 
 .unit {
-  padding: 0 $spacer-2;
+  padding: $spacer-2 $spacer-3;
 }
 </style>

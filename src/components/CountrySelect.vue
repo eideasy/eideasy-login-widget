@@ -22,8 +22,8 @@ export default {
         },
       ],
       selected: {
-        label: 'Leedu',
-        countryCode: 'LT'
+        label: 'Eesti',
+        countryCode: 'EE'
       }
     }
   },
