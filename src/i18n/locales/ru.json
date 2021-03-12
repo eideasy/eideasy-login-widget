@@ -12,5 +12,6 @@
   "yourVerificationCode": "Your verification code:",
   "cancel": "Cancel",
   "noResponseError": "Something went wrong. Make sure you're connected to the Internet, then try again.",
-  "yourRegion": "Your Region"
+  "yourRegion": "Your Region",
+  "back": "Back"
 }

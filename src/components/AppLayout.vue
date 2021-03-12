@@ -8,6 +8,7 @@ import LoadingOverlay from './LoadingOverlay';
 import AppAlert from './AppAlert';
 import FlashMessages from './FlashMessages';
 import MobileIdAuth from '../views/MobileIdAuth';
+import BackButton from './BackButton';
 
 export default {
   name: 'AppLayout',
@@ -20,13 +21,14 @@ export default {
     FlashMessages,
     SmartIdAuth,
     MobileIdAuth,
+    BackButton,
   },
   computed: {
     ...getters,
   },
   methods: {
     ...actions,
-  }
+  },
 }
 </script>
 
@@ -42,7 +44,7 @@ export default {
     </AppHeader>
     <AppHeader v-else>
       <template v-slot:left>
-        Back button
+        <BackButton :on-click="() => changeView('MethodSelection')" />
       </template>
       <template v-slot:right>
         {{ $t(currentViewTitleKey) }}

@@ -41,6 +41,9 @@ export default {
   computed: {
     ...getters,
   },
+  beforeDestroy() {
+    this.cancel();
+  },
   methods: {
     ...actions,
     clearErrors() {
