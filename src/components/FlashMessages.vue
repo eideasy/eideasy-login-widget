@@ -9,6 +9,15 @@ export default {
   },
   computed: {
     ...getters,
+    messages() {
+      const $t = this.$t.bind(this);
+      return this.flashMessages.map(function(message) {
+        if (message.translationKey) {
+          message.text = $t(message.translationKey);
+        }
+        return message;
+      });
+    },
   }
 }
 </script>
@@ -16,7 +25,7 @@ export default {
 <template>
   <div>
     <AppAlert
-      v-for="message in flashMessages"
+      v-for="message in messages"
       :key="message.text"
 
       :scheme="message.scheme"

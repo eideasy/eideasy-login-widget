@@ -7,5 +7,7 @@
   "logIn": "Prisijungti",
   "phoneNumber": "Telefono numeris",
   "thisFieldIsRequired": "This field is required",
-  "yourVerificationCode": "Your verification code:"
+  "yourVerificationCode": "Your verification code:",
+  "cancel": "Cancel",
+  "noResponseError": "Something went wrong. Make sure you're connected to the Internet, then try again."
 }

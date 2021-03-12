@@ -59,6 +59,9 @@ export const actions = {
     ) {
       message.scheme = 'danger';
       message.text = data.error.response.data.message;
+    } else {
+      message.scheme = 'danger';
+      message.translationKey = 'noResponseError';
     }
 
     if (data.message) {

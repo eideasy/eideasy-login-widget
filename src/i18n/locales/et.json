@@ -7,5 +7,7 @@
   "logIn": "Logi sisse",
   "phoneNumber": "Mobiili number",
   "thisFieldIsRequired": "See on kohustuslik väli",
-  "yourVerificationCode": "Kontrollkood:"
+  "yourVerificationCode": "Kontrollkood:",
+  "cancel": "Tühista",
+  "noResponseError": "Something went wrong. Make sure you're connected to the Internet, then try again."
 }
