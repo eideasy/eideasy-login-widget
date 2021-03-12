@@ -46,9 +46,7 @@ export default {
   }
 
   .text {
-    text-transform: uppercase;
-    font-size: $font-size-sm;
-    letter-spacing: 0.03667em;
+    @extend .uppercase-sm;
   }
 
   .backIcon {

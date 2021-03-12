@@ -36,7 +36,9 @@ export default {
   <div :class="$style.layout">
     <AppHeader v-if="currentView === 'MethodSelection'">
       <template v-slot:left>
-        {{ $t('yourRegion') }}
+        <div :class="$style.regionTitle">
+          {{ $t('yourRegion') }}
+        </div>
       </template>
       <template v-slot:right>
         Region picker
@@ -47,7 +49,9 @@ export default {
         <BackButton :on-click="() => changeView('MethodSelection')" />
       </template>
       <template v-slot:right>
-        {{ $t(currentViewTitleKey) }}
+        <div :class="$style.viewTitle">
+          {{ $t(currentViewTitleKey) }}
+        </div>
       </template>
     </AppHeader>
     <div :class="$style.main">
@@ -105,5 +109,17 @@ export default {
       text-decoration: none;
       color: $primary;
     }
+  }
+
+  .viewTitle {
+    @extend .uppercase-sm;
+    text-align: right;
+    letter-spacing: 0.03667em;
+    color: $primary;
+  }
+
+  .regionTitle {
+    color: $gray-700;
+    @extend .uppercase-sm;
   }
 </style>

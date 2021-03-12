@@ -4,3 +4,9 @@
   list-style: none;
   display: block;
 }
+
+.uppercase-sm {
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.03667em;
+}
