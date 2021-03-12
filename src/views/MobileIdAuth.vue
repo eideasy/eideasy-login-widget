@@ -87,7 +87,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div :class="$style.formContainer">
     <div
       v-if="challenge"
       :class="$style.challenge"
@@ -121,6 +121,11 @@ export default {
 </template>
 
 <style lang="scss" module>
+.formContainer {
+  max-width: $form-container-width;
+  margin: 0 auto;
+}
+
 .challenge {
   text-align: center;
   color: $primary;

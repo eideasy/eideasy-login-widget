@@ -27,13 +27,11 @@ export default {
 </script>
 
 <template>
-  <div>
-    <AppForm
-      id="smartIdForm"
-      v-model="formValue"
-      :schema="schema"
-    />
-  </div>
+  <AppForm
+    id="smartIdForm"
+    v-model="formValue"
+    :schema="schema"
+  />
 </template>
 
 <style lang="scss" module>

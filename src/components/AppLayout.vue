@@ -9,6 +9,9 @@ import AppAlert from './AppAlert';
 import FlashMessages from './FlashMessages';
 import MobileIdAuth from '../views/MobileIdAuth';
 import BackButton from './BackButton';
+import CountrySelect from './CountrySelect';
+import HeaderContentCountry from './HeaderContentCountry';
+import HeaderContentSubView from './HeaderContentSubView';
 
 export default {
   name: 'AppLayout',
@@ -22,6 +25,9 @@ export default {
     SmartIdAuth,
     MobileIdAuth,
     BackButton,
+    CountrySelect,
+    HeaderContentCountry,
+    HeaderContentSubView,
   },
   computed: {
     ...getters,
@@ -34,25 +40,9 @@ export default {
 
 <template>
   <div :class="$style.layout">
-    <AppHeader v-if="currentView === 'MethodSelection'">
-      <template v-slot:left>
-        <div :class="$style.regionTitle">
-          {{ $t('yourRegion') }}
-        </div>
-      </template>
-      <template v-slot:right>
-        Region picker
-      </template>
-    </AppHeader>
-    <AppHeader v-else>
-      <template v-slot:left>
-        <BackButton :on-click="() => changeView('MethodSelection')" />
-      </template>
-      <template v-slot:right>
-        <div :class="$style.viewTitle">
-          {{ $t(currentViewTitleKey) }}
-        </div>
-      </template>
+    <AppHeader>
+      <HeaderContentCountry v-if="currentView === 'MethodSelection'" />
+      <HeaderContentSubView v-else />
     </AppHeader>
     <div :class="$style.main">
       <FlashMessages />
@@ -109,17 +99,5 @@ export default {
       text-decoration: none;
       color: $primary;
     }
-  }
-
-  .viewTitle {
-    @extend .uppercase-sm;
-    text-align: right;
-    letter-spacing: 0.03667em;
-    color: $primary;
-  }
-
-  .regionTitle {
-    color: $gray-700;
-    @extend .uppercase-sm;
   }
 </style>
