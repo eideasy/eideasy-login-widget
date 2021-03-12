@@ -32,7 +32,22 @@ export default {
 
 <template>
   <div :class="$style.layout">
-    <AppHeader />
+    <AppHeader v-if="currentView === 'MethodSelection'">
+      <template v-slot:left>
+        {{ $t('yourRegion') }}
+      </template>
+      <template v-slot:right>
+        Region picker
+      </template>
+    </AppHeader>
+    <AppHeader v-else>
+      <template v-slot:left>
+        Back button
+      </template>
+      <template v-slot:right>
+        {{ $t(currentViewTitleKey) }}
+      </template>
+    </AppHeader>
     <div :class="$style.main">
       <FlashMessages />
       <transition

@@ -6,7 +6,12 @@ export default {
 
 <template>
   <div :class="$style.header">
-    <slot />
+    <div :class="$style.slot">
+      <slot name="left" />
+    </div>
+    <div :class="[$style.slot, $style.slotRight]">
+      <slot name="right" />
+    </div>
   </div>
 </template>
 
@@ -16,6 +21,13 @@ export default {
   min-height: 71px;
   padding: $spacer-1 $spacer-4;
   background-color: $gray-400;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.slotRight {
+  margin-left: auto;
 }
 
 </style>
