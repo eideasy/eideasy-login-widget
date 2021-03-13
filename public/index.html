@@ -28,41 +28,57 @@
 
 
 <div class="container">
+    <div style="margin-top: 10px; margin-bottom: 10px;">
+        <label for="langPicker">Language:</label>
+        <select name="langPicker" id="langPicker">
+            <option value="en">en</option>
+            <option value="et" selected>et</option>
+            <option value="lv">lv</option>
+            <option value="lt">lt</option>
+            <option value="ru">ru</option>
+        </select>
+    </div>
     <div id="widgetHolder" class="widgetHolder"></div>
 </div>
 
 <script>
-    const widgetHolder = document.getElementById('widgetHolder');
-    const eidEasyWidget = document.createElement('eideasy-widget');
+  const widgetHolder = document.getElementById('widgetHolder');
+  const eidEasyWidget = document.createElement('eideasy-widget');
 
-    var settings = {
-      countryCode: 'EE', // ISO 3166  two letter country code
-      language: 'et', // ISO 639-1 two letter language code,
-      sandbox: true,
-      clientId: '2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg',
-      localApiEndpoints: {
-        identityStart: 'http://eid-sample-app.test/api/identity/start',
-        identityFinish: 'http://eid-sample-app.test/api/identity/finish',
+  var settings = {
+    countryCode: 'EE', // ISO 3166  two letter country code
+    language: 'et', // ISO 639-1 two letter language code,
+    sandbox: true,
+    clientId: '2IaeiZXbcKzlP1KvjZH9ghty2IJKM8Lg',
+    localApiEndpoints: {
+      identityStart: 'http://eid-sample-app.test/api/identity/start',
+      identityFinish: 'http://eid-sample-app.test/api/identity/finish',
+    },
+    translations: {
+      'et': {
+        "message": "Mina olen antud kasutaja poolt i18n !!",
       },
-      translations: {
-        'et': {
-          "message": "Mina olen antud kasutaja poolt i18n !!",
-        },
-        'en': {
-          message: "I am provided in settings",
-        }
-      }, // translations object to override existing translations or provide completely new translations
-      onSuccess: function(data) {
-        console.log('!!!!!! success !!!!!!!');
-        console.log(data);
-      },
-    }
+      'en': {
+        message: "I am provided in settings",
+      }
+    }, // translations object to override existing translations or provide completely new translations
+    onSuccess: function (data) {
+      console.log('!!!!!! success !!!!!!!');
+      console.log(data);
+    },
+  }
 
-    Object.keys(settings).forEach(key => {
-      eidEasyWidget[key] = settings[key];
+  Object.keys(settings).forEach(key => {
+    eidEasyWidget[key] = settings[key];
+  });
+
+  widgetHolder.appendChild(eidEasyWidget);
+
+  document
+    .getElementById('langPicker')
+    .addEventListener('change', (e) => {
+      eidEasyWidget.language = e.target.value;
     });
-
-    widgetHolder.appendChild(eidEasyWidget);
 </script>
 <!-- built files will be auto injected -->
 </body>

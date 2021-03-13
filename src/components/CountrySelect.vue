@@ -44,7 +44,7 @@ export default {
       <CountrySelectOption :option="option" />
     </template>
 
-    <template #selected-option-container="{ option, deselect, multiple, disabled }">
+    <template #selected-option-container="{ option }">
       <div class="vs__selected">
         <CountrySelectOption :option="option" />
       </div>
