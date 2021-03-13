@@ -7,24 +7,8 @@ export default {
   },
   data() {
     return {
-      options: [
-        {
-          label: 'Eesti',
-          countryCode: 'EE'
-        },
-        {
-          label: 'Läti',
-          countryCode: 'LV'
-        },
-        {
-          label: 'Leedu',
-          countryCode: 'LT'
-        },
-      ],
-      selected: {
-        label: 'Eesti',
-        countryCode: 'EE'
-      }
+      availableCountries: ['EE', 'LV', 'LT'],
+      selected: 'EE',
     }
   },
 }
@@ -33,7 +17,7 @@ export default {
 <template>
   <v-select
     v-model="selected"
-    :options="options"
+    :options="availableCountries"
     :class="$style.select"
     :clearable="false"
   >

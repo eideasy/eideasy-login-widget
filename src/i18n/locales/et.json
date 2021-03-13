@@ -11,8 +11,8 @@
   "thisFieldIsRequired": "See on kohustuslik väli",
   "yourVerificationCode": "Kontrollkood:",
   "cancel": "Tühista",
-  "noResponseError": "Something went wrong. Make sure you're connected to the Internet, then try again.",
-  "yourRegion": "Your Region",
+  "noResponseError": "Toiming ebaõnnestus. Palun kontrolli kas internetiühendus on olemas, sulge kõik brauseriaknad ja proovi seejärel uuesti",
+  "yourRegion": "Riik",
   "back": "Back",
   "countries": {
     "EE": {
