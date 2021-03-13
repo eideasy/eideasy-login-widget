@@ -13,7 +13,7 @@ export default {
 <template>
   <div :class="$style.option">
     <img
-      :src="`//purecatamphetamine.github.io/country-flag-icons/3x2/${option.countryCode}.svg`"
+      :src="`//matsjoonas.github.io/country-flag-icons/3x2/${option.countryCode}.svg`"
       :alt="option.label"
       :class="$style.flag"
     >
