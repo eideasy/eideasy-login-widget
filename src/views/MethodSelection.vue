@@ -1,14 +1,23 @@
 <script>
 import MethodButton from '../components/MethodButton.vue';
 import {actions, getters} from '../store';
+import {enabledMethodsByCountry} from '../config';
 
 export default {
   name: 'MethodSelection',
   components: {
     MethodButton,
   },
+  data() {
+    return {
+      enabledMethodsByCountry,
+    }
+  },
   computed: {
     ...getters,
+    authMethods() {
+      return enabledMethodsByCountry[this.countryCode];
+    },
   },
   methods: {
     ...actions,
@@ -34,31 +43,17 @@ export default {
 <template>
   <div :class="$style.methodSelection">
     <div :class="$style.row">
-      <div :class="$style.unit">
+      <div
+        v-for="method in authMethods"
+        :key="method.name"
+        :class="$style.unit"
+      >
         <MethodButton
           :disabled="isLoading"
-          icon-name="IconMobileId"
-          :on-click="() => changeView('MobileIdAuth')"
+          :icon-name="method.iconName"
+          :on-click="() => changeView(method.viewName)"
         >
-          {{ $t("mobileId") }}
-        </MethodButton>
-      </div>
-      <div :class="$style.unit">
-        <MethodButton
-          :disabled="isLoading"
-          icon-name="IconSmartId"
-          :on-click="() => changeView('SmartIdAuth')"
-        >
-          {{ $t("smartId") }}
-        </MethodButton>
-      </div>
-      <div :class="$style.unit">
-        <MethodButton
-          :disabled="isLoading"
-          icon-name="IconIdCard"
-          :on-click="authenticateWithIdCard"
-        >
-          {{ $t("idCard") }}
+          {{ $t(method.name) }}
         </MethodButton>
       </div>
     </div>

@@ -13,12 +13,12 @@ export default {
 <template>
   <div :class="$style.option">
     <img
-      :src="`//matsjoonas.github.io/country-flag-icons/3x2/${option.label}.svg`"
-      :alt="$t(`countries.${option.label}.name`)"
+      :src="`//matsjoonas.github.io/country-flag-icons/3x2/${option.countryCode}.svg`"
+      :alt="option.label"
       :class="$style.flag"
     >
     <div :class="$style.optionText">
-      {{ $t(`countries.${option.label}.name`) }}
+      {{ option.label }}
     </div>
   </div>
 </template>

@@ -1,9 +1,10 @@
 import Vue from "vue";
-import views from './views/views';
+import {availableCountries} from './config';
+import viewNames from './views/viewNames';
 
 export const store = Vue.observable({
   countryCode: 'EE',
-  currentView: 'MethodSelection',
+  currentView: viewNames.MethodSelection,
   currentViewTitleTranslationKey: '',
   isLoading: false,
   flashMessages: [],
@@ -19,7 +20,7 @@ export const getters = {
 
 export const mutations = {
   setCountryCode(countryCode) {
-    store.countryCodeng = countryCode;
+    store.countryCode = countryCode;
   },
   setCurrentView(template) {
     store.currentView = template;
@@ -46,12 +47,16 @@ export const actions = {
     mutations.setIsLoading(false);
   },
   changeCountry(countryCode) {
-    mutations.setCountryCode(countryCode);
+    if (availableCountries.indexOf(countryCode) !== -1) {
+      mutations.setCountryCode(countryCode);
+    } else {
+      mutations.setCountryCode(availableCountries[0]);
+    }
   },
   changeView(viewName) {
     mutations.clearFlashMessages();
-    mutations.setCurrentView(views[viewName].template);
-    mutations.setCurrentViewTitleKey(views[viewName].titleTranslationKey);
+    mutations.setCurrentView(viewName);
+    mutations.setCurrentViewTitleKey(viewName);
   },
   addFlashMessage(data) {
     const message = {

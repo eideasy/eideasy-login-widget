@@ -1,15 +1,11 @@
+import MethodSelection from '../views/MethodSelection.vue';
+import SmartIdAuth from '../views/SmartIdAuth';
+import MobileIdAuth from '../views/MobileIdAuth';
+
 const views = Object.freeze({
-  MethodSelection: {
-    template: 'MethodSelection',
-  },
-  MobileIdAuth: {
-    template: 'MobileIdAuth',
-    titleTranslationKey: 'mobileIdViewTitle',
-  },
-  SmartIdAuth: {
-    template: 'SmartIdAuth',
-    titleTranslationKey: 'smartIdViewTitle',
-  },
+  MethodSelection,
+  SmartIdAuth,
+  MobileIdAuth,
 });
 
 export default views;

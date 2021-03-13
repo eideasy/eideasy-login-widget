@@ -1,33 +1,29 @@
 <script>
 import {getters, actions} from '../store';
-import MethodSelection from '../views/MethodSelection.vue';
-import SmartIdAuth from '../views/SmartIdAuth';
 import AppFooter from './AppFooter';
 import AppHeader from './AppHeader';
 import LoadingOverlay from './LoadingOverlay';
 import AppAlert from './AppAlert';
 import FlashMessages from './FlashMessages';
-import MobileIdAuth from '../views/MobileIdAuth';
 import BackButton from './BackButton';
 import CountrySelect from './CountrySelect';
 import HeaderContentCountry from './HeaderContentCountry';
 import HeaderContentSubView from './HeaderContentSubView';
+import views from '../views/views';
 
 export default {
   name: 'AppLayout',
   components: {
-    MethodSelection,
     AppFooter,
     AppHeader,
     LoadingOverlay,
     AppAlert,
     FlashMessages,
-    SmartIdAuth,
-    MobileIdAuth,
     BackButton,
     CountrySelect,
     HeaderContentCountry,
     HeaderContentSubView,
+    ...views,
   },
   computed: {
     ...getters,

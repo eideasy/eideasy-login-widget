@@ -1,5 +1,8 @@
 <script>
 import CountrySelectOption from './CountrySelectOption';
+import {actions, getters} from '../store';
+import {availableCountries} from '../config';
+
 export default {
   name: 'CountrySelect',
   components: {
@@ -7,19 +10,39 @@ export default {
   },
   data() {
     return {
-      availableCountries: ['EE', 'LV', 'LT'],
-      selected: 'EE',
+      availableCountries,
     }
   },
+  computed: {
+    ...getters,
+    value() {
+      const {countryCode} = this;
+      return {
+        label: this.$t(`countries.${countryCode}.name`),
+        countryCode,
+      }
+    },
+    options() {
+      const $t = this.$t.bind(this);
+      return this.availableCountries.map((countryCode) => ({
+        label: $t(`countries.${countryCode}.name`),
+        countryCode,
+      }))
+    }
+  },
+  methods: {
+    ...actions,
+  }
 }
 </script>
 
 <template>
   <v-select
-    v-model="selected"
-    :options="availableCountries"
+    :value="value"
+    :options="options"
     :class="$style.select"
     :clearable="false"
+    @input="(value) => changeCountry(value.countryCode)"
   >
     <template
       slot="option"
