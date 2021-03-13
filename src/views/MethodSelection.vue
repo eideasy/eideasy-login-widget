@@ -35,7 +35,17 @@ export default {
           this.loadingEnd();
         },
       });
-    }
+    },
+    handleMethodSelection(methodName) {
+      // we do not need a separate view to handle id card authentication as
+      // it doesn't involve any form filling or additional actions in the this widget
+      // so we can just handle the ID auth here
+      if (methodName === 'idCard') {
+        this.authenticateWithIdCard();
+      } else {
+        this.selectMethod(methodName)
+      }
+    },
   }
 }
 </script>
@@ -51,7 +61,7 @@ export default {
         <MethodButton
           :disabled="isLoading"
           :icon-name="method.iconName"
-          :on-click="() => changeView(method.viewName)"
+          :on-click="() => handleMethodSelection(method.name)"
         >
           {{ $t(method.name) }}
         </MethodButton>

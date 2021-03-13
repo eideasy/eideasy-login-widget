@@ -38,6 +38,7 @@ export default {
     language: {
       handler(newVal) {
         this.$i18n.locale = newVal;
+        this.$eidEasyClient.setLanguage(newVal);
       },
       immediate: true,
     },

@@ -16,9 +16,7 @@ export const allMethods = Object.freeze({
   },
   idCard: {
     name: 'idCard',
-    viewName: viewNames.MobileIdAuth,
     iconName: iconNames.IconIdCard,
-    titleTranslationKey: 'mobileIdViewTitle',
   },
 })
 

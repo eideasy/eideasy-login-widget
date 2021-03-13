@@ -1,5 +1,5 @@
 import Vue from "vue";
-import {availableCountries} from './config';
+import {availableCountries, allMethods} from './config';
 import viewNames from './views/viewNames';
 
 export const store = Vue.observable({
@@ -53,10 +53,15 @@ export const actions = {
       mutations.setCountryCode(availableCountries[0]);
     }
   },
+  selectMethod(methodName) {
+    const {titleTranslationKey, viewName} = allMethods[methodName];
+    mutations.clearFlashMessages();
+    mutations.setCurrentViewTitleKey(titleTranslationKey);
+    mutations.setCurrentView(viewName);
+  },
   changeView(viewName) {
     mutations.clearFlashMessages();
     mutations.setCurrentView(viewName);
-    mutations.setCurrentViewTitleKey(viewName);
   },
   addFlashMessage(data) {
     const message = {

@@ -1,10 +1,16 @@
 <script>
 import BackButton from './BackButton';
 import {getters, actions} from '../store';
+import viewNames from '../views/viewNames';
 export default {
   name: 'HeaderContentSubView',
   components: {
     BackButton,
+  },
+  data() {
+    return {
+      viewNames,
+    }
   },
   computed: {
     ...getters,
@@ -18,7 +24,7 @@ export default {
 <template>
   <div :class="$style.headerRow">
     <div :class="$style.left">
-      <BackButton :on-click="() => changeView('MethodSelection')" />
+      <BackButton :on-click="() => changeView(viewNames.MethodSelection)" />
     </div>
 
     <div :class="$style.right">
